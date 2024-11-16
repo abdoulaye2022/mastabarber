@@ -1,0 +1,282 @@
+/*================Error Style====================*/
+
+.errore-area {
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+
+.errore-img {
+        position: relative;
+
+        img{
+            max-width: unset;
+            width: auto;
+        }
+    }
+
+  .errore-text {
+        padding-top: 50px;
+
+        p{
+            width: 400px;
+             margin: 30px auto;
+        }
+        .btn-1{
+            color: #fff;
+        }
+    }
+}
+/*================Error Style====================*/
+
+/*=================commingsoon Style================*/
+.commingsoon {
+    position: relative;
+    background-image: url(../img/commingsoon.jpg);
+    padding: 80px 0px;
+    text-align: center;
+
+    &::before {
+        position: absolute;
+        content: '';
+        background-color: rgb(17, 17, 17);
+        opacity: 0.8;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+  .com-logo {
+        margin: 100px auto;
+        text-align: center;
+
+        img{
+            max-width: unset;
+            width: auto;
+        }
+    }
+
+    .comming-content {
+        position: relative;
+        text-align: center;
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #fff;
+            max-width: 500px;
+            margin: auto;
+        }
+    }
+
+#clockdiv {
+        display: inline-flex;
+        position: relative;
+        margin-left: -20px;
+
+         .time {
+            display: inline-block;
+            width: 165px;
+            padding: 60px 0px;
+            text-align: center;
+
+         
+        span {
+                font-size: 72px;
+                color: #ffffff;
+                font-weight: 700;
+                line-height: 82px;
+                font-family: $quinaryFont;
+            }
+
+            .smalltext {
+                font-size: 22px;
+                color: #ffffff;
+                font-weight: 600;
+            }
+        }
+        .dot {
+            font-size: 50px;
+            color: #ffffff;
+            padding: 100px 10px;
+        }
+    }
+
+    .subscribe {
+        position: relative;
+        margin: auto;
+        width: 58%;
+
+    form {
+            width: 100%;
+            display: flex;
+
+ input.form-control {
+                max-width: 78%;
+                padding: 30px 15px;
+                font-size: 14px;
+                border: 0;
+                border-radius: 0;
+            }
+       .sub-btn {
+                font-size: 16px;
+                background: $secondaryColor;
+                padding: 0px 50px;
+                border: none;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .comming-social {
+        position: relative;
+        margin-top: 50px;
+        text-align: center;
+
+        ul{
+            position: relative;
+            li{
+                border-radius: 50%;
+                background: #ffffff;
+                height: 35px;
+                width: 35px;
+                display: inline-block;
+                transition: .3s ease;
+                margin-left: 10px;
+                a{
+                    font-size: 17px;
+                    color: $secondaryColor;
+                    padding: 8px 8px;
+                    display: block;
+                    transition: .4s ease;
+                }
+            }
+        }
+    }
+}
+/*=================commingsoon Style================*/
+
+/*=================FAQ Style====================*/
+.faq-area {
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+
+    .card{
+        border-radius: 0;
+        margin-bottom: 30px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0.14px 1.995px 5.52px 0.48px rgba(241, 241, 241, 0.91);
+        text-align: left;
+        .card-header{
+            position: relative;
+            border-radius: 0;
+            border-bottom: 0;
+            background-color: rgb(255, 255, 255);
+
+    
+         .accordion-toggle.collapsed {
+             font-size: 20px;
+             color: $h-tag-Color;
+             font-family: $primaryFont;
+
+             &:hover{
+                 color: $secondaryColor;
+             }
+    
+             .fa-chevron-up{
+                display: none;
+               
+            }
+            .fa-chevron-down{
+                display: block;
+                position: absolute;
+                right: 5px;
+                font-size: 20px;
+                top: 7px;
+                color: #c6c9d8;
+    
+            }
+    
+            }
+             .accordion-toggle {
+                 font-size: 20px;
+                 color: $secondaryColor;
+                 font-family: $primaryFont;
+                 &:hover{
+                    color: $secondaryColor;
+                }
+            
+                .fa-chevron-down{
+                    display: none;
+            }
+            .fa-chevron-up{
+                position: absolute;
+                right: 5px;
+                font-size: 20px;
+                top: 7px;
+                color: $secondaryColor;
+            }
+    
+    
+            }
+    
+            
+        }
+    
+        .card-block {
+            padding: 0px 20px;
+            background-color: rgb(255, 255, 255);
+    
+            p{
+                font-size: 14px;
+                padding-bottom: 20px;
+                line-height: 24px;
+            }
+        }
+     }
+}
+
+.problrm-solve {
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+    h2{
+        margin: auto;
+        margin-bottom: 50px;
+        max-width: 500px;
+
+    }
+
+    form{
+
+        .form-group{
+            width: 100%;
+
+            .form-control {
+                position: relative;
+                padding: 25px 20px;
+                font-size: 16px;
+                font-family: "Poppins", sans-serif;
+                margin: 10px 0px;
+
+            }
+
+            button.btn-1{
+                display: block;
+                border: 0;
+                width: 100%;
+                margin-top: 10px;
+                font-size: 17px;
+                text-transform: uppercase;
+                font-family: "Poppins", sans-serif;
+            }
+            
+        }
+    }
+}
+/*=================FAQ Style====================*/
+  
+

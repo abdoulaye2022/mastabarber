@@ -1,0 +1,146 @@
+/*=======================Contact Style=========================*/
+
+.contact-area{
+    position: relative;
+    margin-top: 150px;
+    
+    .contact-info {
+        position: relative;
+        margin-bottom: 150px;
+    
+       .single-info {
+            position: relative;
+            text-align: center;
+            padding: 30px 50px;
+            transition: .5s ease;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: -0.326px 0.946px 14.72px 1.28px rgba(232, 235, 234, 0.53);
+
+            &:hover{
+
+                    border-radius: 10px;
+                    background-color: rgb(255, 255, 255);
+                    box-shadow: 3.661px 41.84px 49.68px 4.32px rgba(241, 241, 241, 0.91);
+                }
+    
+            i {
+                font-size: 30px;
+                color: $secondaryColor;
+            }
+    
+            h5 {
+                line-height: 32px;
+                font-weight: 700;
+                font-size: 18px;
+                color: $h-tag-Color;
+            }
+        }
+
+        .sf-2{
+            position: relative;
+            background: unset;
+            text-align: left;
+            box-shadow: none;
+            margin-bottom: 40px;
+            padding: 0;
+
+            &:hover{
+                box-shadow: none;
+            }
+        }
+
+    }
+    .contact-details {
+        position: relative;
+
+        h2{
+            margin-bottom: 50px;
+        }
+
+        .cd-text {
+            position: relative;
+            padding-right: 40%;
+            margin-top: 150px;
+
+            p{
+                margin-top: 30px;
+            }
+
+        }
+
+        .cd-info{
+            position: relative;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: -0.326px 0.946px 14.72px 1.28px rgba(232, 235, 234, 0.53);
+            padding: 60px 40px;
+
+
+            form{
+
+                .form-group{
+                    width: 100%;
+
+                    .form-control {
+                        position: relative;
+                        padding: 25px 20px;
+                        font-size: 16px;
+                        font-family: "Poppins", sans-serif;
+                        margin: 5px 0px;
+                        background: #f9f9f9;
+                        border-color: #f9f9f9;
+
+                    }
+
+                    .grecaptcha-badge {
+                        width: 83% !important;
+
+                        iframe {
+                            width: 100%;
+
+                            .rc-anchor-normal {
+                                height: 74px;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    button.btn-1{
+                        display: block;
+                        border: 0;
+                        width: 100%;
+                        margin-top: 5px;
+                        font-size: 17px;
+                        text-transform: uppercase;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+.g-map {
+    position: relative;
+    margin-top: 150px;
+
+ .map {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        margin-top: 10px;
+
+       div#googleMap {
+            height: 100%;
+            width: 100%;
+
+            img{
+                max-width: unset;
+                width: auto;
+            }
+        }
+    }
+}
+
+/*=======================Contact Style=========================*/

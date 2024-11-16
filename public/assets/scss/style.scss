@@ -1,0 +1,63 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Barber
+    Template URI: 
+    Description: This is html5 template
+    Author: Voidcoders
+    Author URI: https://themeforest.net/user/voidcoders
+    Version: 1.00
+
+-----------------------------------------------------------------------------------
+
+    INDEX
+    ===================
+    1. Theme default Style
+    2. Header Style
+    3. Hero Style
+    4. About Style
+    5. Portfolio Style
+    6  Service Style
+    7  Testimonial Style
+    8  Blog Style
+    9  Gallery Style
+    10  Error Style
+    11  Contact Style
+    12  Footer Style
+    13  RTL
+    14  Responsive Style
+    
+    
+-----------------------------------------------------------------------------------*/
+// Import
+
+@import "variables.scss";
+@import "mixins.scss";
+@import "theme-deafult.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "about.scss";
+@import "testimonial.scss";
+@import "blog.scss";
+@import "portfolio.scss";
+@import "service.scss";
+@import "error.scss";
+@import "contact.scss";
+@import "footer.scss";
+@import "keyframes.scss";
+@import "rtl.scss";
+
+// Import Responsive
+@import "responsive.scss";
+
+
+
+/* 
+--------------------------
+- Custom Typography
+--------------------------
+*/
+
+
+/* Your Custom Typography. */
+
+

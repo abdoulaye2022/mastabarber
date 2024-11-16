@@ -1,0 +1,25 @@
+/*=================== Header Style 1 Start ====================*/
+
+header.header-area {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 25px 0px;
+    z-index: 9;
+
+    .logo-wrapper {
+        position: relative;
+
+        img{
+            max-width: unset;
+            width: auto;
+        }
+    }
+
+    .menu-wrapper {
+        position: relative;
+        margin-top: 10px;
+    }
+}
+/*==================== Header Style 1 ==========================*/

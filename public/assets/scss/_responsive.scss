@@ -1,0 +1,515 @@
+/*========================
+
+Responsive Style
+
+==========================*/
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width\
+
+
+@media only screen and (max-width: 1400px){
+
+
+    .testimonial .client button.owl-next {
+      
+        right: -5%;
+    }
+    .testimonial .client button.owl-prev {
+        left: -5%;
+    }
+
+
+
+
+}
+
+@media  only screen and (min-width: 992px) and (max-width: 1199px) {
+
+
+    .sm-mint a .sub-arrow{
+        display: none;
+    }
+  
+} //End min 992px to max 1199px
+// Medium devices (tablets, less than 1199px)
+@media  only screen and (min-width: 1199px){ 
+
+  
+    .sm-mint a.has-submenu {
+        padding-right: 34px;
+      }
+
+}
+@media  only screen and (max-width: 1199px) {
+
+    .sm-mint a, .sm-mint a:hover, .sm-mint a:focus, .sm-mint a:active, .sm-mint a.highlighted {
+        padding: 14px 12px;
+        font-size: 12px;
+    }
+
+    .hero-area .hero-content {
+        padding: 250px 100px 220px;
+    }
+    .footer-area .footer-details .f-gallery ul li {
+        width: 80px;
+        height: 80px;
+    }
+    .hero-2 .hero-content {
+        padding: 250px 0 219px;
+    }
+
+    .hero-3 .hero-content h1 {
+        font-size: 80px;
+        line-height: 85px;
+    }
+    .history {
+        margin-top: 100px;
+    }
+    .blog {
+        margin-top: 100px;
+    }
+    .commingsoon .com-logo {
+        margin: 0px auto 57px;
+    }
+
+    .contact-area .contact-info .single-info {
+        padding: 30px 0;
+    }
+    .contact-area {
+        margin-top: 80px;
+    }
+    .contact-area .contact-info {
+        margin-bottom: 80px;
+    }
+    .contact-area .contact-details .cd-text {
+        padding-right: 20%;
+        margin-top: 150px;
+    }
+   
+} // End Max 1199px
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991.90px) {
+
+  
+    .sm-mint a {
+        font-size: 10px;
+    }
+    .sm-mint a .sub-arrow{
+        display: none;
+    }
+    .contact-area .contact-info .single-info p{
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+    .contact-area .contact-details .cd-info {
+
+        padding: 30px 10px;
+        
+    }
+    
+} // End min 767px to max 991px
+
+// Medium devices (tablets, less than 992px)
+@media  only screen and (max-width: 991px){ 
+    
+    h1 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .hero-area .hero-content p {
+        font-size: 16px;
+        width: 130px;
+
+    }
+
+    .about .about-content h2 {
+        padding-right: 0%;
+        font-size: 30px;
+        line-height: 37px;
+    }
+
+    .testimonial .client button.owl-next {
+      
+        right: 0;
+    }
+    .testimonial .client button.owl-prev {
+        left: 0;
+    }
+    .hero-area .hero-content p {
+        width: 100%;
+    }
+    .hero-2 .hero-content .for-appointment .cell-number span {
+        font-size: 16px;
+    }
+    .hero-2 .hero-content .for-appointment .cell-number p {
+        font-size: 14px;
+    }
+    .hero-3 .hero-content h1 {
+        font-size: 45px;
+    }
+    .blog .side-bar {
+        padding-left: 0;
+    }
+    .commingsoon .subscribe {
+        width: 90%;
+    }
+
+} /*--Max-width :991px----------*/
+
+// Small devices (landscape phones, less than 868px)
+@media  only screen and (max-width: 850px) {
+ 
+    .sm-mint a {
+        font-size: 10px;
+        padding: 14px 9px;
+    }
+    .commingsoon #clockdiv .time {
+        width: 150px;
+    }
+
+} /*===========Max-width : 867px---------------*/
+
+// Small devices (landscape phones, less than 768px)
+@media  only screen and (max-width: 767px) {
+
+    .sm-mint a {
+        color: rgb(255, 255, 255);
+        padding: 14px 10px;
+        font-size: 12px;
+    }
+    .sm-mint {
+        padding: 31px 20px;
+    }
+
+   
+    #main-menu {
+        position: fixed;
+        max-height: 383px;
+        border-bottom: 0;
+        overflow-y: scroll;
+        width: 100%;
+        top: 70px;
+        border-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        left: 0;
+        box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
+    }
+    .hero-area .hero-content {
+        padding: 250px 10px 220px;
+    }
+    .hero-area .hero-content {
+        padding: 200px 10px 160px;
+    }
+
+    .about {
+        padding-top: 100px;
+    }
+
+    .about .about-img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .about .about-img .as-img {
+        margin-bottom: 25px;
+        margin-top: 50px;
+    }
+
+    .about .about-img .as-img.as-img2 {
+        margin-top: 25px;
+    }
+
+    .team {
+        margin-top: 100px;
+    }
+
+    .team .single-t-member {
+        margin-bottom: 50px;
+    }
+
+    .video {
+        margin-top: 100px;
+    }
+    .footer-area {
+        margin-top: 100px;
+        text-align: center;
+    }
+    .footer-area .footer-details .fd-info p {
+
+        padding-right: 0;
+    }
+    .footer-area .footer-details .f-link {
+        margin-top: 50px;
+    }
+    .footer-area .footer-details .f-gallery {
+        margin-top: 50px;
+    }
+    .about2 .about-content {
+        margin-top: 50px;
+    }
+    .about2 .about-content .s-safety {
+
+        margin-bottom: 8px;
+        margin-top: 30px;
+    }
+    .service-2 {
+        margin-top: 50px;
+    }
+    .appointment .appoint-text {
+        padding: 50px 0;
+        text-align: center;
+    }
+    .blog-3 {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+    .portfolio {
+        padding-top: 100px;
+    }
+    .mar-top-140 {
+        margin-top: 80px !important;
+    }
+    .heritage {
+        
+    margin-top: 50px;
+        padding: 90px 0px;
+    }
+    .service-5 .main-single-service {
+        margin-bottom: 60px;
+    }
+    .about .inner-ab-img {
+        text-align: left;
+        margin-top: 50px;
+    }
+    .history-img {
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .portfolio2 {
+        margin-top: 0;
+    }
+
+    .blog {
+        margin-top: 50px;
+    }
+    .blog .side-bar {
+        margin-top: 50px;
+    }
+    .blog .bg-3 {
+        margin-top: 50px;
+    }
+    .commingsoon #clockdiv .time span {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .commingsoon #clockdiv .time {
+        width: 100px;
+    }
+    .commingsoon #clockdiv .dot {
+        font-size: 25px;
+        padding: 80px 10px;
+    }
+    .commingsoon #clockdiv .time .smalltext {
+        font-size: 15px;
+    }
+    .faq-area {
+        margin-top: 100px;
+    }
+    .problrm-solve {
+        margin-top: 60px;
+    }
+    .errore-area .errore-img img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .contact-area .contact-details .cd-info form .form-group .form-control {
+      
+        font-size: 12px;
+    }
+    .contact-area .contact-info .single-info {
+    
+        margin-bottom: 30px;
+    }
+    .contact-area .contact-details .cd-text {
+        padding-right: 0%;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    .contact-area .contact-details h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+    .contact-area .contact-info {
+        margin-bottom: 0;
+    }
+    .contact-area {
+        margin-top: 100px;
+    }
+}// ENd max 767px
+
+
+
+// Extra small devices (portrait phones, less than 575px)
+@media  only screen and (max-width: 575px) { 
+
+
+    .hero-2 .hero-content .for-appointment i {
+        font-size: 25px;
+        height: 50px;
+        padding: 20px 12px;
+        width: 50px;
+        line-height: 10px;
+        margin-left: 15px;
+    }
+    .hero-3 .hero-content h1 {
+        font-size: 45px;
+        line-height: 55px;
+    }
+    .errore-area .errore-text p {
+        width: 100%;
+    }
+
+} //End max 575px
+
+// Extra small devices (portrait phones, less than 512px)
+@media  only screen and (max-width: 512px) { 
+    header.header-area .logo-wrapper img {
+        max-width: 100%;
+        width: 100%;
+    }
+    header.header-area {
+      
+        padding: 10px 0px;
+    }
+
+    .hero-2 .hero-content .for-appointment .btn-1 {
+        
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+
+    .problrm-solve h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .contact-area .contact-details .cd-info {
+        padding: 60px 5px;
+    }
+} //End max 512px
+ 
+
+// Extra small devices (portrait phones, less than 434px)
+@media  only screen and (max-width: 480px) { 
+
+.hero-2 .hero-content .for-appointment i{
+    display: none;
+}
+.cell-number {
+    display: none;
+}
+.hero-3 .hero-content h1 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.hero-3 .hero-content p {
+    font-size: 14px;
+    line-height: 25px;
+}
+.commingsoon #clockdiv .time span {
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.commingsoon #clockdiv .time {
+    width: 80px;
+}
+} // End max 480px
+
+
+// Extra small devices (portrait phones, less than 434px)
+@media  only screen and (max-width: 434px) { 
+
+   
+    .video {
+        margin-top: 60px;
+    }
+
+    .testimonial .client button.owl-prev {
+        display: none;
+    }
+    .testimonial .client button.owl-next {
+        display: none;
+    }
+    .testimonial .test-img img {
+        max-width: 100%;
+        width: 100%;
+    }
+    .hero-area.hero-3 .hero-content {
+        padding: 149px 10px;
+    }
+    .about-3 {
+        padding: 100px 0;
+    }
+    .inner-hero .page-tittle {
+        padding: 130px 0px;
+    }
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+
+ } // End max 434px
+
+ 
+// Extra small devices (portrait phones, less than 402px)
+@media  only screen and (max-width: 402px) { 
+    .commingsoon #clockdiv .time {
+        width: 60px;
+    }
+    .commingsoon #clockdiv .time span {
+        font-size: 30px;
+        line-height: 44px;
+    }
+    .contact-area .contact-details h2 {
+        font-size: 24px;
+        line-height: 34px;
+    }
+ } // End max 402px
+
+// Extra small devices (portrait phones, less than 388px)
+@media  only screen and (max-width: 388px) { 
+
+ 
+ }// End max 388px
+
+// Extra small devices (portrait phones, less than 359px)
+@media  only screen and (max-width: 359px) { 
+   
+    h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .commingsoon #clockdiv .dot {
+        font-size: 20px;
+        padding: 80px 5px;
+    }
+    .commingsoon .com-logo {
+        padding: 0px 20px;
+    }
+    .commingsoon .com-logo img {
+        max-width: 100%; 
+        width: 100%;
+    }
+}
+
+

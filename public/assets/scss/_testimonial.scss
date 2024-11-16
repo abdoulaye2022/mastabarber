@@ -1,0 +1,274 @@
+/*=====================Team Style Start=====================*/
+
+.team {
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+
+    h2{
+        margin-bottom: 60px;
+    }
+    .single-t-member {
+        position: relative;
+        overflow: hidden;
+
+        &:hover{
+            
+        .st-text {
+
+            bottom: 0;
+         
+
+        }
+
+        }
+
+        .st-text {
+            position: absolute;
+            left: 0;
+            bottom: -110px;
+            text-align: center;
+            width: 100%;
+            height: 110px;
+            background: #bb8f40cf;
+            padding: 20px 0px;
+            transition: .5s ease all;
+
+            h4{
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+            ul{
+                margin-top: 5px;
+                li{
+                    margin-right: 5px;
+                    a{
+                        color: #cbcbcb;
+
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.team-2{
+    position: relative;
+
+    h2{
+        font-family: $quinaryFont;
+        text-transform: uppercase;
+    }
+
+    .single-t-member {
+
+ 
+
+        .st-text {
+            background: #a36c4ecf;
+
+            
+            h4{
+                text-transform: uppercase;
+                font-family: $quinaryFont;
+            }
+        }
+    }
+}
+/*=====================Team Style End=====================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*======================Testimonial Style Start=====================*/
+.testimonial {
+    position: relative;
+    background: #f8f8f7;
+    text-align: center;
+    padding: 100px 0;
+    overflow: hidden;
+
+    .test-img {
+        position: relative;
+
+        img{
+            max-width: unset;
+            width: auto;
+        }
+    }
+    h2{
+        padding-top: 40px;
+    }
+.client{
+    position: relative;
+
+    button.owl-prev {
+        position: absolute;
+        top: -25px;
+        font-size: 50px;
+        left: -13%;
+        color: #a2a4b0;
+        transition: .5s ease;
+
+        &:hover{
+            background: #86979100;
+             color: $secondaryColor;
+        }
+    }
+    button.owl-next {
+        position: absolute;
+        top: -25px;
+        right: -13%;
+        transition: .5s ease;
+        color: #a2a4b0;
+        font-size: 50px;
+        &:hover{
+            background: #86979100;
+             color: $secondaryColor;
+        }
+    }
+
+    .single-client {
+      padding-top: 40px;
+        border-radius: 10px;
+
+       
+    
+        p{
+            font-size: 17px;
+            z-index: 1;
+            max-width: 645px;
+            margin: auto;
+            position: relative;
+        }
+        span{
+            font-size: 18px;
+            display: block;
+            color: $h-tag-Color;
+            margin-top: 35px;
+            text-transform: uppercase;
+            font-family: $secondaryFont;
+
+       
+       
+        }
+        
+    }
+}
+}
+
+.testimonial-2{
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+    padding: 100px 0;
+    background: url(../img/hero/testimonial.jpg);
+    background-position: center;
+
+    &::before{
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(17, 17, 17);
+        opacity: 0.431;
+
+    }
+
+    h2{
+        font-family: $quinaryFont;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .client-2 {
+
+        .single-client{
+            padding-top: 40px;
+            border-radius: 10px;
+    
+    
+            p{
+                font-size: 17px;
+                z-index: 1;
+                max-width: 645px;
+                margin: auto;
+                color: #fff;
+                position: relative;
+            }
+            span{
+                font-size: 18px;
+                display: block;
+                color: #fff;;
+                margin-top: 35px;
+                text-transform: uppercase;
+                font-family: $secondaryFont;
+    
+           
+           
+            }
+        }
+
+    }
+
+    
+    .owl-theme {
+
+        .owl-dots {
+            margin-top: 30px !important;
+
+           .owl-dot{
+            span {
+                background: #6f4d3bba;
+            }
+           }
+        .owl-dot.active{
+            span{
+                background: #a36c4e;
+            }
+        }
+        }
+    }
+
+
+
+}
+
+.testmonial-3{
+    background: #1c1c1c;
+
+
+    h2{
+        color: #fff;
+    }
+
+    .client{
+    .single-client {
+  
+          span{
+           color: #fff;
+  
+          }
+          
+      }
+    }
+
+}
+
+/*======================Testimonial Style End=====================*/

@@ -1,0 +1,379 @@
+/*=====================Service Area Style Start==========================*/
+
+.service {
+    position: relative;
+    margin-top: 80px;
+    text-align: center;
+    padding: 80px 0px;
+    background: #f8f8f7;
+
+    h2{
+        margin-bottom: 30px;
+    }
+
+    .single-service {
+        position: relative;
+        text-align: left;
+        margin: 15px auto;
+        margin-top: 60px;
+
+        .ss-icon{
+            position: relative;
+            i{
+                font-size: 60px;
+                color: $secondaryColor;
+            }
+        }
+        .ss-text {
+            position: relative;
+
+            h3{
+                position: relative;
+                padding: 25px 0px;
+            }
+        }
+    }
+}
+
+
+
+
+.service-2 {
+    background: #fffaf8;
+    margin-top: 150px;
+    padding: 100px 0px;
+
+    .service-img {
+        margin-bottom: 20px;
+    }
+
+    .service-list{
+        position: relative;
+
+        h2{
+            font-family: $quinaryFont;
+            margin: 0;
+            text-align: left;
+        }
+
+        ul{
+            text-align: left;
+            margin-top: 50px;
+
+            li{
+                width: 95%;
+                line-height: 25px;
+                padding: 15px 0px;
+
+                p{
+                    
+                font-family: $secondaryFont;
+                font-size: 18px;
+                float: left;
+                }
+                span{
+                    font-family: $secondaryFont;
+                    font-size: 18px;
+                    float: right;
+
+                }
+            }
+        }
+    }
+}
+
+.service-3 {
+    position: relative;
+    margin-top: 0px;
+    background: #1c1c1c;
+
+    h2{
+        color: #fff;
+    }
+
+   .single-service{
+
+    .ss-text{
+        h3{
+            color: #fff;
+        }
+    }
+   }
+}
+
+.service-4{
+    margin-top: 0;
+    background: #f8f8f7;
+    overflow: hidden;
+
+    
+    .service-list{
+        position: relative;
+
+        h2{
+            font-family: $primaryFont;
+        }
+
+    }
+}
+
+.service-5{
+    background: #f8f8f7;
+    padding-bottom: 50px;
+
+ h2 {
+        margin-bottom: 50px;
+    }
+
+    .main-single-service {
+        position: relative;
+        box-shadow: 3.661px 41.84px 49.68px 4.32px rgba(241, 241, 241, 0.91);
+
+        &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgb(17, 17, 17);
+            opacity: 0.502;
+        }
+   
+          
+
+        .mss-text {
+            position: absolute;
+            bottom: 0;
+            text-align: left;
+            width: 100%;
+            padding: 20px;
+
+            h3{
+                font-size: 28px;
+                font-weight: 400;
+                color: #fff;
+                padding-bottom: 10px;
+            }
+            p{
+                color: #fff;
+            }
+        }
+
+    }
+
+
+}
+.appointment {
+    position: relative;
+    padding: 100px 0px;
+    background: url(../img/hero/appointment.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &::before{
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: #111111;
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+    }
+    .appoint-text {
+        position: relative;
+        padding: 210px 0;
+
+        h2{
+          font-family: $quinaryFont;
+         color: #fff;
+         text-transform: uppercase;
+        }
+        p{
+            font-size: 17px;
+            color: #fff;
+            padding-top: 15px;
+        }
+    }
+
+
+    .booked {
+        position: relative;
+        background: #fff;
+        padding: 50px 25px;
+
+        h2{
+            font-family: $quinaryFont;
+            text-transform: uppercase;
+        }
+        p{
+            padding-top: 10px;
+        }
+
+        form{
+            position: relative;
+            margin-top: 60px;
+
+
+            .form-control{
+                position: relative;
+                padding: 0 15px;
+                font-size: 14px;
+                height: 40px;
+                 font-family: $secondaryFont;
+                 margin: 5px 0px;
+
+            }
+
+           button.btn-1{
+            border: none;
+            margin-left: 15px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            padding: 12px 30px;
+            background: #a36c4e;
+            }
+
+        }
+    }
+
+}
+
+.appointment2{
+    position: relative;
+    background: url(../img/hero/appointmen2.jpg);
+
+    .appoint-text {
+        
+        h2{
+            font-family: $primaryFont;
+        }
+
+    }
+
+ .booked {
+      
+    h2{
+        font-family: $primaryFont;
+    }
+
+    form {
+        button.btn-1{
+            background: #c79e56;
+        }
+    }
+
+    }
+
+}
+
+
+.heritage {
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+    padding: 180px 0px;
+    background: url(../img/hero/video.jpg);
+    background-size: cover;
+
+    &::before{
+
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgb(17, 17, 17);
+        opacity: 0.6;
+
+
+    }
+
+    h2{
+        position: relative;
+        color: #fff;
+        max-width: 405px;
+        margin: auto;
+    }
+
+
+}
+
+.heritage-2{
+    position: relative;
+    margin-top: 0;
+    background: url(../img/hero/heritage.jpg);
+
+    .btn-1{
+        color: #fff;
+        margin-top: 35px;
+    }
+}
+
+
+
+
+.modal{
+
+    .modal-content {
+        padding: 20px;
+        margin-top: 30%;
+
+        .modal-header button.close {
+            font-size: 30px;
+            padding-top: 0;
+            color: #c79e56;
+            opacity: 1;
+            &:hover{
+                opacity: .5;
+            }
+        }
+
+        .booked {
+            position: relative;
+            background: #fff;
+            padding: 50px 25px;
+    
+            h2{
+                font-family: $quinaryFont;
+                text-transform: uppercase;
+            }
+            p{
+                padding-top: 10px;
+            }
+    
+            form{
+                position: relative;
+                margin-top: 60px;
+    
+    
+                .form-control{
+                    position: relative;
+                    padding: 0 15px;
+                    font-size: 14px;
+                    height: 40px;
+                     font-family: $secondaryFont;
+                     margin: 5px 0px;
+    
+                }
+    
+               button.btn-1{
+                border: none;
+                margin-left: 15px;
+                text-transform: uppercase;
+                margin-top: 5px;
+                padding: 12px 30px;
+                background: #a36c4e;
+                }
+    
+            }
+        }
+
+
+
+    }
+   
+}
+/*=====================Service Area Style End==========================*/

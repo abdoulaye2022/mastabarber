@@ -1,0 +1,16 @@
+{
+    "name": "m2ato/mastabarber",
+    "description": "Site web d'un salon de coiffure à Moncton, offrant des services de coiffure et de soins capillaires personnalisés",
+    "autoload": {
+        "psr-4": {
+            "M2ato\\Mastabarber\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abdoulaye Mohamed Ahmed",
+            "email": "m2atodev@gmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,54 @@
+/*=============Portfolio Style Start===================*/
+
+.portfolio {
+    position: relative;
+    background: #212121;
+    padding-top: 150px;
+    text-align: center;
+
+    h2{
+        color: #fff;
+        margin-bottom: 60px;
+    }
+
+    .single-portfolio{
+
+        position: relative;
+
+        a{
+            position: relative;
+            display: block;
+
+            &::before{
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+                background-color: rgb(17, 17, 17);
+                opacity: 0.502;
+            }
+        }
+    }
+
+}
+
+.portfolio2{
+
+    position: relative;
+    background: none;
+    padding-top: 0;
+    margin-top: 150px;
+    
+    h2{
+        color: $h-tag-Color;
+    }
+
+}
+
+
+
+  
+/*=============Portfolio Style End===================*/
+

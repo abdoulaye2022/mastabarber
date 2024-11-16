@@ -1,0 +1,191 @@
+/*=======================About Style Start===================*/
+.about {
+    position: relative;
+    padding-top: 150px;
+    overflow: hidden;
+
+    .about-content {
+        position: relative;
+
+        h2{
+            position: relative;
+            padding-right: 15%;
+        }
+        p.ab-p{
+            color: #111111;
+            padding: 20px 0px;
+            font-weight: 500;
+        }
+    }
+    .about-img {
+        position: relative;
+        width: calc(100% + 20%);
+        margin-left: 30px;
+        .as-img {
+            margin-bottom: 25px;
+        }
+        .as-img.as-img2 {
+            margin-top: -150px;
+        }
+    }
+
+    .inner-ab-img {
+        position: relative;
+        text-align: right;
+
+        img{
+            max-width: unset;
+            width: auto;
+        }
+    }
+}
+
+.about2 {
+    position: relative;
+
+        .about-img {
+                position: relative;
+                width: 95%;
+                margin-left: 0;
+
+                .as-img {
+                    margin-bottom: 0;
+                }
+            }
+
+            
+        .about-content {
+            position: relative;
+    
+            h2{
+                position: relative;
+                font-family: "Oswald", sans-serif;
+                text-transform: uppercase;
+            }
+
+            .s-safety {
+                position: relative;
+                display: flex;
+                margin-bottom: 8px;
+
+                .ss-img {
+                    position: relative;
+
+                    img{
+                        max-width: unset;
+                        width: auto;
+                    }
+                }
+                .ss-text {
+                    position: relative;
+                    margin-left: 20px;
+
+                    h4{
+                        color: #a36c4e;
+                        font-weight: 500;
+                        font-family: $quinaryFont;
+                    }
+                    p{
+                        padding-top: 5px;
+                    }
+                }
+            }
+          
+        }
+
+
+
+}
+
+.about-3{
+    background: #212121;
+    margin: 0;
+    padding: 150px 0;
+
+     .about-content {
+        position: relative;
+
+        h2{
+            color: #fff;
+        }
+        p.ab-p{
+            
+            color: #bcbbbb;
+        }
+    }
+}
+/*=======================About Style End===================*/
+
+
+
+/*=============================Video ======================*/
+
+.video{
+    position: relative;
+    max-height: 500px;
+    background: url(../img/hero/video.jpg);
+    height: 500px;
+    margin-top: 150px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    a{
+        position: relative;
+        display: block;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: #bb8f40cf;
+        color: #ffffff;
+        text-align: center;
+        line-height: 80px;
+        font-size: 24px;
+
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            border-radius: 50%;
+            border: 1px solid #b88642;
+            -webkit-animation: spin2 1000ms linear infinite;
+            -o-animation: spin2 1000ms linear infinite;
+            animation: spin2 1000ms linear infinite;
+        }
+    }
+}
+
+
+.history {
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+
+    h2{
+        margin-bottom: 60px;
+    }
+    
+    .his-img2{
+        margin-bottom: 30px;
+    }
+
+.history-text{
+    position: relative;
+    text-align: left;
+
+    p{
+        padding-top: 30px;
+}
+
+}
+
+}
+/*==================Vedio End==============*/

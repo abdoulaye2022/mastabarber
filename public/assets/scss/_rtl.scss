@@ -1,0 +1,222 @@
+/*----------------------------------------*/
+/*  Potfo RTL Style
+/*----------------------------------------*/
+
+html[dir="rtl"] {
+
+    header.header-area .logo-wrapper {
+
+        position: relative;
+        text-align: right;
+    }
+
+    .about .about-content {
+
+        padding-left: 40px;
+        
+        text-align: right;
+    }
+
+    .about .about-content h2 {
+
+        padding-right: 0;
+        text-align: right;
+    }
+
+    .service .single-service {
+        text-align: right;
+    }
+    .testimonial {
+        direction: ltr;
+    }
+    .blog .single-blog .sb-text {
+        text-align: right;
+    }
+
+    .footer-area .footer-details .fd-info {
+        text-align: right;
+    }
+
+    .footer-area .footer-details .fd-info p {
+   
+        padding-right: 0;
+    }
+    
+    .footer-area .footer-details .f-link .f-social {
+
+        text-align: right;
+    }
+
+    .footer-area .footer-details .f-link h4 {
+      
+        text-align: right;
+    }
+
+    .footer-area .footer-details .f-gallery h4 {
+     
+        text-align: right;
+    }
+
+    .blog .single-blog .sb-text span:nth-child(2) {
+        float: left;
+    }
+    .modal .modal-content .booked {
+      
+        text-align: right;
+    }
+    .hero-2 .hero-content {
+        position: relative;
+        text-align: right;
+    }
+
+    .about2 .about-content {
+        position: relative;
+        text-align: right;
+    }
+    .about2 .about-content .s-safety .ss-text {
+  
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    .service-2 .service-list h2 {
+  
+        text-align: right;
+    }
+    .service-2 .service-list ul {
+        text-align: right;
+    }
+    .appointment .booked {
+        text-align: right;
+    }
+    .appointment .booked form button.btn-1 {
+ 
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    .modal .modal-content .booked form button.btn-1 {
+      
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .appointment .appoint-text {
+   
+        text-align: right;
+    }
+    .about .about-content p.ab-p {
+ 
+        text-align: right;
+    }
+
+    .contact-area .contact-details {
+        text-align: right;
+    }
+    .contact-area .contact-info .sf-2 {
+     
+        text-align: right;
+    }
+
+    .faq-area .card .card-block {
+        text-align: right;
+    }
+    .blog .side-bar {
+        padding-left: 0;
+        text-align: right;
+        padding-right: 10%;
+    }
+    .blog .side-bar .recent-post .single-recent-blog .srb-text {
+
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .blog .side-bar .catagory ul.c-list li a span {
+
+        padding-left: 0;
+        padding-right: 5px;
+    }
+    
+    .blog .bg-3 .comment-details {
+  
+        text-align: right;
+    }
+    .blog .bg-3 .comment-details .hire-info .form-check .form-check-label {
+      
+        padding-left: 0;
+        margin-right: 15px;
+    }
+
+}
+/*----------------------------------------*/
+/*  Portfo RTL Style END
+/*----------------------------------------*/
+
+
+
+/*----------------------------------------*/
+/*  Portfo RTL Responsive Style
+/*----------------------------------------*/
+html[dir="rtl"] {
+
+
+    @media only screen and (max-width: 1499px){
+
+     
+
+    }
+
+
+    @media only screen and  (max-width: 991px){
+     
+
+        .hero-area .hero-content p {
+            width: 30%;
+        }
+        .hero-2 .hero-content .for-appointment .cell-number p {
+        
+            width: 100%;
+        }
+        .hero-3 .hero-content p {
+            width: 100% !important;
+        }
+    }
+
+
+
+    @media only screen and (max-width: 767px) {
+
+        .main-menu-btn {
+            float: left;
+        }
+        .blog .side-bar {
+            padding-right: 0;
+        }
+
+    }
+
+    @media only screen and (max-width: 380px) {
+
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+/*----------------------------------------*/
+/*  Portfo RTL Responsive Style End
+/*----------------------------------------*/
