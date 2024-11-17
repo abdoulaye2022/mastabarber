@@ -35,15 +35,14 @@ include '../includes/header.php';
     <div class="contact-info">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="single-info">
                         <i class="flaticon-placeholder"></i>
                         <h5>Address</h5>
-                        <p>Materfront avenue,
-                            street 2005F, USA</p>
+                        <p>95 Millennium Blvd, Moncton Suite 310, E1E2G7, Canada</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="single-info">
                         <i class="flaticon-telephone"></i>
                         <h5>Phone</h5>
@@ -51,22 +50,22 @@ include '../includes/header.php';
                         <p>+1 720.661.2231</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="single-info">
                         <i class="flaticon-email"></i>
                         <h5>Web</h5>
-                        <p>admin@example.com</p>
-                        <p>www.adminname.com</p>
+                        <p>contact@mastabarber.com</p>
+                        <p>www.mastabarber.com</p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="single-info">
                         <i class="flaticon-headset"></i>
                         <h5>Live Chat</h5>
                         <p>Dedicated support
                             Chat with me 24/7</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -18,19 +18,19 @@
 
                         </div>
 
-                        <p>95 Millennium Blvd, Moncton Suite 310,  E1E2G7</p>
+                        <p>95 Millennium Blvd, Moncton Suite 310,  E1E 2G7</p>
 
                         <p>+1 720.661.2231</p>
 
                         <div class="f-social">
                             <ul>
-                                <li><a href=""><i class="flaticon-twitter"></i></a></li>
+                                <!-- <li><a href=""><i class="flaticon-twitter"></i></a></li> -->
 
-                                <li><a href=""><i class="flaticon-facebook"></i></a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/masta.barber.2024?mibextid=kFxxJD&rdid=gFvdZECWt8ODqUXG#"><i class="flaticon-facebook"></i></a></li>
 
-                                <li><a href=""><i class="flaticon-instagram"></i></a></li>
+                                <li><a href="https://www.instagram.com/masta.barber?igsh=MXdrZWpkdjRuNG44Yw%3D%3D&utm_source=qr"><i class="flaticon-instagram"></i></a></li>
 
-                                <li><a href=""><i class="flaticon-linkedin"></i></a></li>
+                                <li><a href="https://snapchat.com/t/0HI9FRsS"><i class="fab fa-snapchat"></i></a></li>
 
                             </ul>
                         </div>
@@ -49,13 +49,13 @@
                             <ul>
                                 <li><a href="">About Us</a></li>
 
-                                <li><a href="">Barbers</a></li>
+                                <li><a href="">Service</a></li>
 
                                 <li><a href="">Pricing</a></li>
 
                                 <li><a href="">Appointment</a></li>
 
-                                <li><a href="">Content</a></li>
+                                <li><a href="">Contact</a></li>
 
                             </ul>
                         </div>
@@ -72,17 +72,17 @@
 
                         <div class="fg-img">
                             <ul>
-                                <li><a href=""><img src="assets/img/portfolio/gallery1.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/5.jpeg')"><img src="assets/img/coiffures/5.jpeg" alt=""></a></li>
 
-                                <li><a href=""><img src="assets/img/portfolio/gallery2.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/6.jpeg')"><img src="assets/img/coiffures/6.jpeg" alt=""></a></li>
 
-                                <li><a href=""><img src="assets/img/portfolio/gallery3.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/7.jpeg')"><img src="assets/img/coiffures/7.jpeg" alt=""></a></li>
 
-                                <li><a href=""><img src="assets/img/portfolio/gallery4.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/4.jpeg')"><img src="assets/img/coiffures/4.jpeg" alt=""></a></li>
 
-                                <li><a href=""><img src="assets/img/portfolio/gallery5.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/8.jpeg')"><img src="assets/img/coiffures/8.jpeg" alt=""></a></li>
 
-                                <li><a href=""><img src="assets/img/portfolio/gallery6.jpg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/9.jpeg')"><img src="assets/img/coiffures/9.jpeg" alt=""></a></li>
 
                             </ul>
                         </div>
@@ -101,6 +101,11 @@
         <p>Copyright © 2024 Mastabarber Tous droits réservés. Créé par <a href="https://m2atech.com" target="_blank">M2atech</a></p>
     </footer>
 
+</div>
+
+<div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;" onclick="closeImage()">
+  <img id="modalImage" src="" alt="" style="max-width: 400px; max-height: 400px;">
+  <!-- <span onclick="closeImage()" style="position: absolute; top: 10px; right: 20px; color: white; font-size: 2rem; cursor: pointer;">&times;</span> -->
 </div>
 
 
@@ -169,6 +174,22 @@
 <!-- Scripts -->
 
 <!-- jQuery Plugin -->
+
+<script>
+function showImage(event, src) {
+  event.preventDefault(); // Empêche l'ouverture du lien
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  modalImage.src = src;
+  modal.style.display = 'flex'; // Affiche le conteneur modal
+}
+
+function closeImage() {
+  const modal = document.getElementById('imageModal');
+  modal.style.display = 'none'; // Cache le conteneur modal
+}
+
+</script>
 
 <script src="assets/js/jquery-3.4.1.min.js"></script>
 

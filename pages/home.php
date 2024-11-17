@@ -13,7 +13,7 @@ include '../includes/header.php';
 
                 <div class="hero-content">
 
-                    <h1 data-aos="fade-up" data-aos-duration="1500">The beauty of Afro and Canadian hair</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1500">The beauty of Afro and Canadian men hair</h1>
 
                     <p data-aos="fade-up" data-aos-duration="2000">WELCOME</p>
 
@@ -214,8 +214,7 @@ include '../includes/header.php';
 
                         <h3>Mid taper</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>gradually decreases in hair length from the top of the head to the neckline.</p>
 
                     </div>
 
@@ -258,8 +257,7 @@ include '../includes/header.php';
 
                         <h3>Level 1 cut</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Number 1 haircut – This guard length is slightly longer than the zero, usually ⅛ of an inch</p>
 
                     </div>
 
@@ -280,8 +278,7 @@ include '../includes/header.php';
 
                         <h3>Zero level all shave </h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Blunt or Bob haircut</p>
 
                     </div>
 
@@ -493,10 +490,11 @@ include '../includes/header.php';
 
 
 
-                            <p>These barbers really took the time with my cut and I got a beard trim as well.
-                                They had refreshments in a cooler while you wait, which I waited for about 5 minutes
-                                even though it was “busy.”</p>
-                            <span>MICHEL SMITH</span>
+                            <p>I just got out of Masta barber and I'm super satisfied with my cut! The team is professional 
+                                and really attentive to my needs. The atmosphere is pleasant, and I felt like a king during 
+                                the whole session. I highly recommend this place to anyone looking for a quality service. 
+                                Thank you, Masta barber!</p>
+                            <span>JAMES ROBICHAUD</span>
                         </div>
                     </div>
                     <div class="item" data-aos="fade-up" data-aos-duration="3000">
@@ -505,10 +503,39 @@ include '../includes/header.php';
 
 
 
-                            <p>These barbers really took the time with my cut and I got a beard trim as well.
-                                They had refreshments in a cooler while you wait, which I waited for about 5 minutes
-                                even though it was “busy.”</p>
-                            <span>Maik Herry</span>
+                            <p>I recently visited Masta barber and I am delighted with the result! The cut is perfect and the 
+                                team really took the time to understand what I wanted. I won't hesitate to come back!</p>
+                            <span>MAIK HERRY</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item" data-aos="fade-up" data-aos-duration="3000">
+
+                        <div class="single-client">
+
+
+
+                            <p>Masta barber has become my favorite hair salon! Every time I get out of there, I feel 
+                                confident and stylish. The barbers are experts, and the atmosphere is always at the top. 
+                                Thank you for your excellent service!</p>
+                            <span>ISSA HASSANE</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="item" data-aos="fade-up" data-aos-duration="3000">
+
+                        <div class="single-client">
+
+
+
+                            <p>I can only recommend Masta barber! I had an incredible experience, from the consultation 
+                                to the cut. The team is super friendly and really talented. I am very satisfied with 
+                                my new look!</p>
+                            <span>DRUBA SAMANDEEP</span>
 
                         </div>
 

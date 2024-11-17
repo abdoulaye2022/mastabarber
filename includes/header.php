@@ -129,7 +129,7 @@ $translations = include "../lang/{$lang}.php";
 
                 <div class="col-4 col-md-4">
 
-                    <div class="logo-wrapper">
+                    <div class="logo-wrapper" style="background-color: white; max-width: 140px; border-radius: 10px;">
 
                         <a href="accueil">
 

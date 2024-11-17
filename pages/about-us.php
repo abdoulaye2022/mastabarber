@@ -47,15 +47,11 @@ include '../includes/header.php';
                     <p class="ab-p">Our barbershop is the territory created purely for males who
                         appreciate premium quality, time and flawless look.</p>
 
-                    <p>A barber is a person whose occupation is mainly to cut, dress, groom, style and shave men's and
-                        boys' hair or
-                        beard. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are also
-                        places of
-                        social interaction and public discourse. In some instances, barbershops are also public forums.
-                        They are the
-                        locations of open debates, voicing public concerns, and engaging citizens in discussions about
-                        contemporary
-                        issues.</p>
+                    <p>Welcome to our website dedicated to the beauty of Afro and Canadian hair!
+                        We are excited to welcome you into our world where every hair type is celebrated.
+                        Whether you are looking for unique designs or vibrant dyes, our team is here to
+                        help you express your personal style. Explore our services and let us transform
+                        your hair into a work of art. Thank you for visiting us!</p>
 
                 </div>
 
