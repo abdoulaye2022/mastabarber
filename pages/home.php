@@ -13,10 +13,9 @@ include '../includes/header.php';
 
                 <div class="hero-content">
 
-                    <h1 data-aos="fade-up" data-aos-duration="1500">A smooth barber experience
-                        in your town</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1500">The beauty of Afro and Canadian hair</h1>
 
-                    <p data-aos="fade-up" data-aos-duration="2000">SINCE 1995</p>
+                    <p data-aos="fade-up" data-aos-duration="2000">WELCOME</p>
 
                     <a href="" data-toggle="modal" data-target="#myModal" class="btn-1" data-aos="fade-up"
                         data-aos-duration="3000">Appointment</a>
@@ -45,21 +44,16 @@ include '../includes/header.php';
 
                 <div class="about-content">
 
-                    <h2>The silidium barber
-                        Since 1995</h2>
+                    <h2>Mastabarber
+                        2024</h2>
 
-                    <p class="ab-p">Our barbershop is the territory created purely for males who
-                        appreciate premium quality, time and flawless look.</p>
+                    <!-- <p class="ab-p"></p> -->
 
-                    <p>A barber is a person whose occupation is mainly to cut, dress, groom, style and shave men's
-                        and boys' hair or
-                        beard. A barber's place of work is known as a "barbershop" or a "barber's". Barbershops are
-                        also places of
-                        social interaction and public discourse. In some instances, barbershops are also public
-                        forums. They are the
-                        locations of open debates, voicing public concerns, and engaging citizens in discussions
-                        about contemporary
-                        issues.</p>
+                    <p>Welcome to our website dedicated to the beauty of Afro and Canadian hair!
+                        We are excited to welcome you into our world where every hair type is celebrated.
+                        Whether you are looking for unique designs or vibrant dyes, our team is here to
+                        help you express your personal style. Explore our services and let us transform
+                        your hair into a work of art. Thank you for visiting us!.</p>
 
                 </div>
 
@@ -74,7 +68,7 @@ include '../includes/header.php';
 
                             <div class="as-img" data-aos="fade-up" data-aos-duration="3000">
 
-                                <img src="assets/img/about/about1.jpg" alt="">
+                                <img src="assets/img/coiffures/1.jpeg" alt="">
 
                             </div>
 
@@ -84,13 +78,13 @@ include '../includes/header.php';
 
                             <div class="as-img as-img2" data-aos="fade-down-left" data-aos-duration="3000">
 
-                                <img src="assets/img/about/about2.jpg" alt="">
+                                <img src="assets/img/coiffures/2.jpeg" alt="">
 
                             </div>
 
                             <div class="as-img" data-aos="fade-up-left" data-aos-duration="3000">
 
-                                <img src="assets/img/about/about3.jpg" alt="">
+                                <img src="assets/img/coiffures/3.jpeg" alt="">
 
                             </div>
 
@@ -127,10 +121,10 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Haircut</h3>
+                        <h3>High fade</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>A high fade begins higher up on the sides, creating a more pronounced contrast with the
+                             longer hair on top</p>
 
                     </div>
 
@@ -149,10 +143,10 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Shaving</h3>
+                        <h3>Mid fade</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>A mid fade haircut is a popular style for men featuring medium length hair toward the top 
+                            and tapered short hair on the sides that fades out at the bottom.</p>
 
                     </div>
 
@@ -172,17 +166,16 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Beard</h3>
+                        <h3>Low fade</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>A low fade starts close to the ear, just above the ears. The fade line drops down behind the ears and around the 
+                            back of the head. It keeps an inch or less of skin exposed above the natural hairline. </p>
 
                     </div>
 
                 </div>
 
             </div>
-
 
             <div class="col-md-4">
 
@@ -195,10 +188,11 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Trimming</h3>
+                        <h3>Higth taper</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>A less subtle with a larger fade area - it begins tapering near the 
+                            crown or higher up on the side. Both styles: Highly customizable with different lengths 
+                            and finishes to suit your preferences.</p>
 
                     </div>
 
@@ -218,7 +212,7 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Facial</h3>
+                        <h3>Mid taper</h3>
 
                         <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
                             massage</p>
@@ -241,7 +235,72 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Styling</h3>
+                        <h3>Low taper</h3>
+
+                        <p>This type of taper cuts the hair length down around the lower edge of your ear.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="single-service">
+
+                    <div class="ss-icon">
+
+                        <i class="flaticon-scissors-1"></i>
+                    </div>
+
+                    <div class="ss-text">
+
+                        <h3>Level 1 cut</h3>
+
+                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
+                            massage</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="single-service">
+
+                    <div class="ss-icon">
+
+                        <i class="flaticon-scissors-1"></i>
+                    </div>
+
+                    <div class="ss-text">
+
+                        <h3>Zero level all shave </h3>
+
+                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
+                            massage</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="single-service">
+
+                    <div class="ss-icon">
+
+                        <i class="flaticon-scissors-1"></i>
+                    </div>
+
+                    <div class="ss-text">
+
+                        <h3>Beard +Trime </h3>
 
                         <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
                             massage</p>
@@ -470,7 +529,7 @@ include '../includes/header.php';
 <!--Blog Area Start-->
 
 
-<div class="blog">
+<!-- <div class="blog">
 
     <div class="container">
 
@@ -566,7 +625,7 @@ include '../includes/header.php';
 
     </div>
 
-</div>
+</div> -->
 
 <!--Blog Area End-->
 

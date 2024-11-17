@@ -28,8 +28,11 @@ switch ($pathAfterPublic) {
     case 'contact':
         require __DIR__ . '/../pages/contact.php';
         break;
-    case 'about':
-        require __DIR__ . '/../pages/about.php';
+    case 'about-us':
+        require __DIR__ . '/../pages/about-us.php';
+        break;
+    case 'service':
+        require __DIR__ . '/../pages/service.php';
         break;
     default:
         require __DIR__ . '/../pages/404.php';

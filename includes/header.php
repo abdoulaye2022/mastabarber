@@ -1,3 +1,9 @@
+<?php
+$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
+
+$translations = include "../lang/{$lang}.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
 
     <meta charset="utf-8">
 
-    <title>Home V1 | Barber HTML Template</title>
+    <title><?php echo $translations['welcome']; ?></title>
 
     <meta name="description" content="">
 
@@ -125,7 +131,7 @@
 
                     <div class="logo-wrapper">
 
-                        <a href="index.html">
+                        <a href="accueil">
 
                             <img src="assets/img/logo.png" alt="">
 
@@ -150,61 +156,17 @@
                             <!-- Sample menu definition -->
                             <ul id="main-menu" class="sm sm-mint">
 
-                                <li><a href="index.html">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                        <li><a href="index-rev_slider.html">Home Rev-slider</a></li>
-                                    </ul>
+                                <li><a href="accueil">Home</a>
                                 </li>
 
-                                <li><a href="service.html">Services</a>
-
-                                    <ul>
-                                        <li><a href="service.html">Services 1</a></li>
-                                        <li><a href="service-2.html">Services 2</a></li>
-                                    </ul>
-
+                                <li><a href="service">Services</a>
                                 </li>
 
-                                <li><a href="about-us.html">About us</a>
-
-                                    <ul>
-                                        <li><a href="about-us.html">About us 1</a></li>
-                                        <li><a href="about-us-2.html">About us 2</a></li>
-                                    </ul>
-
+                                <li><a href="about-us">About us</a>
                                 </li>
+                                <li><a href="contact">Contacts</a>
 
-                                <li><a href="">Pages</a>
 
-                                    <ul>
-                                        <li><a href="blog-grid.html">Blog</a>
-                                            <ul>
-
-                                                <li><a href="blog-grid.html">Blog Grid</a></li>
-                                                <li><a href="blog-grid-2.html">Blog Grid 2</a></li>
-                                                <li><a href="blog-grid-3.html">Blog Grid 3</a></li>
-                                                <li><a href="blog-single-left.html">Blog Single Left</a></li>
-                                                <li><a href="blog-single-right.html">Blog Single Right</a></li>
-
-                                            </ul>
-
-                                        </li>
-                                        <li><a href="commingsoon.html">Commingsoon</a></li>
-                                        <li><a href="faq.html">Faq</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
-
-                                </li>
-
-                                <li><a href="contact.html">Contacts</a>
-
-                                    <ul>
-                                        <li><a href="contact.html">Contacts 1</a></li>
-                                        <li><a href="contact-2.html">Contacts 2</a></li>
-                                    </ul>
                                 </li>
 
                                 <li><a data-toggle="modal" data-target="#myModal">Appointment</a></li>
