@@ -44,8 +44,7 @@ include '../includes/header.php';
 
                 <div class="about-content">
 
-                    <h2>Mastabarber
-                        2024</h2>
+                    <h2>Mastabarber</h2>
 
                     <!-- <p class="ab-p"></p> -->
 
@@ -53,7 +52,7 @@ include '../includes/header.php';
                         We are excited to welcome you into our world where every hair type is celebrated.
                         Whether you are looking for unique designs or vibrant dyes, our team is here to
                         help you express your personal style. Explore our services and let us transform
-                        your hair into a work of art. Thank you for visiting us!.</p>
+                        your hair into a work of art. Thank you for visiting us!</p>
 
                 </div>
 

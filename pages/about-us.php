@@ -41,17 +41,14 @@ include '../includes/header.php';
 
                 <div class="about-content">
 
-                    <h2>The silidium barber
-                        Since 1995</h2>
+                    <h2>Mastabarber</h2>
 
-                    <p class="ab-p">Our barbershop is the territory created purely for males who
+                    <!-- <p class="ab-p">Our barbershop is the territory created purely for males who -->
                         appreciate premium quality, time and flawless look.</p>
 
-                    <p>Welcome to our website dedicated to the beauty of Afro and Canadian hair!
-                        We are excited to welcome you into our world where every hair type is celebrated.
-                        Whether you are looking for unique designs or vibrant dyes, our team is here to
-                        help you express your personal style. Explore our services and let us transform
-                        your hair into a work of art. Thank you for visiting us!</p>
+                    <p>Masta Barber is a family story of immigrants to Canada who, over time, have cultivated a passion for hairdressing. 
+                        For Masta, passion is more important than work, and each client is an opportunity to live a new journey of 
+                        discovery and sharing.</p>
 
                 </div>
 

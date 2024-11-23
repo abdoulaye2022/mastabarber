@@ -16,11 +16,12 @@ $translations = include "../lang/{$lang}.php";
 
     <title><?php echo $translations['welcome']; ?></title>
 
-    <meta name="description" content="">
+    <meta name="description" content="Welcome to our website dedicated to the beauty of Afro and Canadian hair! We are excited to welcome you into our world where every hair type is celebrated. Whether you are looking for unique designs or vibrant dyes, our team is here to help you express your personal style. Explore our services and let us transform your hair into a work of art. Thank you for visiting us!.">
 
     <meta name="author" content="">
 
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Coiffure homme, Barber shop, Coupe de cheveux pour hommes, Rasage traditionnel, Entretien de la barbe, Style masculin, Coiffeur pour hommes, Coupe tendance homme, Salon de coiffure homme, Soins capillaires masculins, Barbe et moustache, Dégradé homme, Coiffure professionnelle, Men's haircut, Barber shop, Men's grooming, Beard trim, Traditional shaving, Men's hairstyles, Professional barber, Haircuts for men, Beard care, Fade haircut, Men's hair styling, Gentlemen's grooming, Shaving services">
+
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 

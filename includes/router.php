@@ -34,6 +34,15 @@ switch ($pathAfterPublic) {
     case 'service':
         require __DIR__ . '/../pages/service.php';
         break;
+    case 'login':
+        require __DIR__ . '/../dm/login.php';
+        break;
+    case 'dashboard':
+        require __DIR__ . '/../dm/dashboard.php';
+        break;
+    case 'logout':
+        require __DIR__ . '/../dm/includes/logout.php';
+        break;
     default:
         require __DIR__ . '/../pages/404.php';
         break;
