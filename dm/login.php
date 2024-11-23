@@ -40,6 +40,7 @@ if(isset($_POST['login'])) {
             if ($user) {
                 // Vérifier le mot de passe avec password_verify
                 if (password_verify($password, $user['password'])) {
+                    $_SESSION['id'] = $user['id'];
                     $_SESSION['firstname'] = $user['firstname'];
                     $_SESSION['lastname'] = $user['lastname'];
                     header("Location: dashboard");
