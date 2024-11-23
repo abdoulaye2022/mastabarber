@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+define('BASE_URL', (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/mastabarber/public/');
+
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
 }

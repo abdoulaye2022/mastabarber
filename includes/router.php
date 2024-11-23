@@ -3,7 +3,7 @@
 $publicDir = '/mastabarber/public';
 
 // Récupérer l'URL complète après le nom de domaine
-$requestUri = $_SERVER['REQUEST_URI'];
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 // Supprimer le chemin vers le dossier public pour obtenir le path après
 $pathAfterPublic = str_replace($publicDir, '', $requestUri);
@@ -12,38 +12,46 @@ $pathAfterPublic = str_replace($publicDir, '', $requestUri);
 $pathAfterPublic = trim($pathAfterPublic, '/');
 $pathAfterPublic = str_replace('.php', '', $pathAfterPublic);
 
-// Afficher le chemin après public pour vérification
-// var_dump($pathAfterPublic); die;
-
-
+// Fonction pour sécuriser les includes
+function secureInclude($filePath) {
+    if (file_exists($filePath)) {
+        require $filePath;
+    } else {
+        require __DIR__ . '/../pages/404.php';
+    }
+}
 
 // Routage des pages
 switch ($pathAfterPublic) {
     case '':
-        require __DIR__ . '/../pages/home.php';
-        break;
     case 'accueil':
-        require __DIR__ . '/../pages/home.php';
+        secureInclude(__DIR__ . '/../pages/home.php');
         break;
     case 'contact':
-        require __DIR__ . '/../pages/contact.php';
+        secureInclude(__DIR__ . '/../pages/contact.php');
         break;
     case 'about-us':
-        require __DIR__ . '/../pages/about-us.php';
+        secureInclude(__DIR__ . '/../pages/about-us.php');
         break;
     case 'service':
-        require __DIR__ . '/../pages/service.php';
+        secureInclude(__DIR__ . '/../pages/service.php');
         break;
     case 'login':
-        require __DIR__ . '/../dm/login.php';
+        secureInclude(__DIR__ . '/../dm/login.php');
         break;
     case 'dashboard':
-        require __DIR__ . '/../dm/dashboard.php';
+        secureInclude(__DIR__ . '/../dm/dashboard.php');
         break;
     case 'logout':
-        require __DIR__ . '/../dm/includes/logout.php';
+        secureInclude(__DIR__ . '/../dm/includes/logout.php');
+        break;
+    case 'users':
+        secureInclude(__DIR__ . '/../dm/includes/users.php');
+        break;
+    case 'not-found':
+        secureInclude(__DIR__ . '/../pages/404.php');
         break;
     default:
-        require __DIR__ . '/../pages/404.php';
+        secureInclude(__DIR__ . '/../pages/404.php');
         break;
 }

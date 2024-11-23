@@ -47,44 +47,44 @@ $translations = include "../lang/{$lang}.php";
     <!-- CSS -->
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/bootstrap.min.css">
 
     <!-- Jquery ui CSS -->
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/jquery-ui.css">
 
     <!-- Fancybox CSS -->
-    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/jquery.fancybox.min.css">
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/css/font-awosome.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/font-awosome.css">
 
     <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="assets/flat-font/flaticon.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/flat-font/flaticon.css">
 
     <!-- Ticker css-->
-    <link rel="stylesheet" href="assets/css/ticker.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/ticker.min.css">
 
     <!--Owl carousel Slider -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/owl.theme.default.min.css">
 
     <!-- Nav Menu CSS -->
-    <link rel="stylesheet" href="assets/css/sm-core-css.css">
-    <link rel="stylesheet" href="assets/css/sm-mint.css">
-    <link rel="stylesheet" href="assets/css/sm-style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-core-css.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-mint.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-style.css">
 
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/css/aos.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/aos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/animate.min.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/magnific-popup.css">
 
     <!-- Main StyleSheet CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
 
 
     <!-- Favicon -->
 
-    <link rel="shortcut icon" type="image/png" href="assets/img/fav-icon.png">
+    <link rel="shortcut icon" type="image/png" href="<?php echo BASE_URL; ?>assets/img/fav-icon.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -134,7 +134,7 @@ $translations = include "../lang/{$lang}.php";
 
                         <a href="accueil">
 
-                            <img src="assets/img/logo.png" alt="">
+                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="">
 
                         </a>
 

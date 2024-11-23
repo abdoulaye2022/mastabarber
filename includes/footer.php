@@ -14,7 +14,7 @@
 
                         <div class="f-logo">
 
-                            <img src="assets/img/logo.png" alt="">
+                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="">
 
                         </div>
 
@@ -72,17 +72,17 @@
 
                         <div class="fg-img">
                             <ul>
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/5.jpeg')"><img src="assets/img/coiffures/5.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/5.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/5.jpeg" alt=""></a></li>
 
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/6.jpeg')"><img src="assets/img/coiffures/6.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/6.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/6.jpeg" alt=""></a></li>
 
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/7.jpeg')"><img src="assets/img/coiffures/7.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/7.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/7.jpeg" alt=""></a></li>
 
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/4.jpeg')"><img src="assets/img/coiffures/4.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/4.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/4.jpeg" alt=""></a></li>
 
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/8.jpeg')"><img src="assets/img/coiffures/8.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/8.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/8.jpeg" alt=""></a></li>
 
-                                <li><a href="#" onclick="showImage(event, 'assets/img/coiffures/9.jpeg')"><img src="assets/img/coiffures/9.jpeg" alt=""></a></li>
+                                <li><a href="#" onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/9.jpeg')"><img src="<?php echo BASE_URL; ?>assets/img/coiffures/9.jpeg" alt=""></a></li>
 
                             </ul>
                         </div>
@@ -191,28 +191,28 @@ function closeImage() {
 
 </script>
 
-<script src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>
 
 <!-- Bootstrap JS -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>
 
 <!-- Aos Js Plugin-->
-<script src="assets/js/aos.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/aos.js"></script>
 
 <!-- Jquery ui JS-->
-<script src="assets/js/jquery-ui.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/jquery-ui.js"></script>
 
 <!--  Nav  -->
-<script src="assets/js/jquery.smartmenus.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/jquery.smartmenus.js"></script>
 
 <!--Owl carousel Slider-->
-<script src="assets/js/owl.carousel.min.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/owl.carousel.min.js"></script>
 
 <!--Js Plugins-->
-<script src="assets/js/jquery.fancybox.min.js"></script>
-<script src='assets/js/jquery.magnific-popup.min.js'></script>
+<script src="<?php echo BASE_URL; ?>assets/js/jquery.fancybox.min.js"></script>
+<script src='<?php echo BASE_URL; ?>assets/js/jquery.magnific-popup.min.js'></script>
 <!-- Main Script -->
-<script src="assets/js/theme.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/theme.js"></script>
 
 
 
