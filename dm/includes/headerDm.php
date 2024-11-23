@@ -1,9 +1,3 @@
-<?php
-if (!isset($_SESSION['id'])) {
-    header("location: accueil");
-    exit();
-};
-?>
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable">

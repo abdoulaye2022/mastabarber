@@ -1,7 +1,7 @@
 <?php
 require_once (__DIR__ . '/../vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createImmutable($_SERVER['HTTP_HOST'] == 'localhost' ? $_SERVER['DOCUMENT_ROOT'] . '/mastabarber/' : $_SERVER['DOCUMENT_ROOT'] . "/");
+$dotenv = Dotenv\Dotenv::createImmutable($_SERVER['HTTP_HOST'] == 'localhost' ? $_SERVER['DOCUMENT_ROOT'] . '/mastabarber/' : $_SERVER['DOCUMENT_ROOT'] . "/../");
 $dotenv->load();
 
 

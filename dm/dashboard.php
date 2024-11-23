@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION['id'])) {
+    header("location: accueil");
+    exit();
+};
+
 include __DIR__ . '/includes/headerDm.php';
 ?>
 
