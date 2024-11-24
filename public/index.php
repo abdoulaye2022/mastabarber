@@ -1,7 +1,12 @@
 <?php
 session_start();
 
-define('BASE_URL', (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/mastabarber/public/');
+// Détecter l'environnement
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1') {
+    define('BASE_URL', (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/mastabarber/public/');
+} else {
+    define('BASE_URL', (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/public/');
+}
 
 if (isset($_GET['lang'])) {
     $_SESSION['lang'] = $_GET['lang'];
