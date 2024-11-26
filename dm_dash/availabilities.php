@@ -15,7 +15,7 @@ if(isset($_POST['add'])) {
             $date = htmlspecialchars(trim($_POST['date']));
             $start_time = htmlspecialchars(trim($_POST['start_time']));
             $end_time = htmlspecialchars(trim($_POST['end_time']));
-            $duree = 45; // Durée en minutes
+            $duree = 40; // Durée en minutes
             $pauses = [
                 ['debut' => '16:30', 'fin' => '17:20']
             ];
@@ -332,7 +332,7 @@ document.getElementById('availability-form').addEventListener('submit', function
         // Vérifier si c'est un multiple de 45
         if (differenceInMinutes % 45 !== 0) {
             e.preventDefault(); // Empêcher la soumission
-            alert("The selected time range must allow for full 45-minute slots.");
+            alert("The selected time range must allow for full 40-minute slots.");
         }
     }
 });
