@@ -34,25 +34,33 @@
                 <ul class="navbar-nav" id="navbar-nav">
                     <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="sidebarDashboards">
-                            <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Dashboards</span>
+                        <a class="nav-link menu-link" href="dashboard">
+                        <i class="mdi mdi-speedometer"></i> <span data-key="dash">Dashboards</span>
                         </a>
-                        <div class="collapse menu-dropdown" id="sidebarDashboards">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="users" class="nav-link" data-key="t-analytics">
-                                        Users </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="dashboard-crm.html" class="nav-link" data-key="t-crm"> Gestion services </a>
-                                </li>
-                            </ul>
-                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="users-management">
+                        <i class=" ri-team-line"></i></i> <span data-key="users">Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="services-management">
+                            <i class=" ri-list-check"></i> <span data-key="services">Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="customers-management">
+                            <i class="ri-user-heart-line"></i> <span data-key="customers">Customers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="availabilities-management">
+                            <i class=" ri-timer-line"></i> <span data-key="customers">Availabilities</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="widgets.html">
-                            <i class="mdi mdi-puzzle-outline"></i> <span data-key="t-widgets">Settings</span>
+                            <i class="ri-settings-2-line"></i> <span data-key="settings">Settings</span>
                         </a>
                     </li>
 

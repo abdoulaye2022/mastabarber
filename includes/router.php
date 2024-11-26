@@ -5,6 +5,13 @@ $publicDir = '/mastabarber/public';
 // Récupérer l'URL complète après le nom de domaine
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+// Vérifier si l'URL contient une extension .php
+if (preg_match('/\.php$/', $requestUri)) {
+    // Rediriger vers la page 404
+    header("Location: /mastabarber/public/not-found");
+    exit;
+}
+
 // Supprimer le chemin vers le dossier public pour obtenir le path après
 $pathAfterPublic = str_replace($publicDir, '', $requestUri);
 
@@ -25,33 +32,48 @@ function secureInclude($filePath) {
 switch ($pathAfterPublic) {
     case '':
     case 'accueil':
-        secureInclude(__DIR__ . '/../pages/home.php');
+        require_once(__DIR__ . '/../pages/home.php');
         break;
     case 'contact':
-        secureInclude(__DIR__ . '/../pages/contact.php');
+        require_once(__DIR__ . '/../pages/contact.php');
         break;
     case 'about-us':
-        secureInclude(__DIR__ . '/../pages/about-us.php');
+        require_once(__DIR__ . '/../pages/about-us.php');
         break;
     case 'service':
-        secureInclude(__DIR__ . '/../pages/service.php');
+        require_once(__DIR__ . '/../pages/service.php');
         break;
     case 'login':
-        secureInclude(__DIR__ . '/../dm/login.php');
+        require_once(__DIR__ . '/../dm_dash/login.php');
         break;
     case 'dashboard':
-        secureInclude(__DIR__ . '/../dm/dashboard.php');
+        require_once(__DIR__ . '/../dm_dash/dashboard.php');
         break;
     case 'logout':
-        secureInclude(__DIR__ . '/../dm/includes/logout.php');
+        require_once(__DIR__ . '/../dm_dash/includes/logout.php');
         break;
-    case 'users':
-        secureInclude(__DIR__ . '/../dm/includes/users.php');
+    case 'users-management':
+        require_once(__DIR__ . '/../dm_dash/users.php');
+        break;
+    case 'services-management':
+        require_once(__DIR__ . '/../dm_dash/services.php');
+        break;
+    case 'customers-management':
+        require_once(__DIR__ . '/../dm_dash/customers.php');
+        break;
+    case 'availabilities-management':
+        require_once(__DIR__ . '/../dm_dash/availabilities.php');
+        break;
+    case 'ajax_check_user':
+        require_once(__DIR__ . '/../dm_dash/ajax/check_user.php');
+        break;
+    case 'ajax_get_availabilities':
+        require_once(__DIR__ . '/../dm_dash/ajax/get_availabilities.php');
         break;
     case 'not-found':
-        secureInclude(__DIR__ . '/../pages/404.php');
+        require_once(__DIR__ . '/../pages/404.php');
         break;
     default:
-        secureInclude(__DIR__ . '/../pages/404.php');
+        require_once(__DIR__ . '/../pages/404.php');
         break;
 }
