@@ -356,7 +356,7 @@ if (isset($_POST['book'])) {
 
                                 </li>
 
-                                <li><a data-toggle="modal" data-target="#myModal">Appointment</a></li>
+                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Appointment</a></li>
 
                             </ul>
 

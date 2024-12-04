@@ -53,11 +53,11 @@
                             <i class="ri-user-heart-line"></i> <span data-key="customers">Customers</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link menu-link" href="availabilities-management">
                             <i class=" ri-timer-line"></i> <span data-key="customers">Availabilities</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="widgets.html">
                             <i class="ri-settings-2-line"></i> <span data-key="settings">Settings</span>

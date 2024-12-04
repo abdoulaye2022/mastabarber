@@ -1,4 +1,15 @@
 <?php
+if (!isset($_COOKIE['has_visited'])) {
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $stmt = $cn->prepare("INSERT INTO visits (ip_address) VALUES (:ip)");
+    $stmt->bindParam(':ip', $ip);
+    $stmt->execute();
+
+    // Définir un cookie pour 24 heures
+    setcookie('has_visited', 'true', time() + 86400); // 86400 = 24 heures
+}
+
+
 include '../includes/header.php';
 ?>
 
@@ -17,8 +28,7 @@ include '../includes/header.php';
 
                     <p data-aos="fade-up" data-aos-duration="2000">WELCOME</p>
 
-                    <a href="" data-toggle="modal" data-target="#myModal" class="btn-1" data-aos="fade-up"
-                        data-aos-duration="3000">Appointment</a>
+                    <a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services" class="btn-1">Appointment</a>
 
                 </div>
 
@@ -332,12 +342,12 @@ include '../includes/header.php';
 
                     <div class="t-img">
 
-                        <img src="assets/img/team/team1.jpg" alt="">
+                        <img src="assets/img/coiffures/dm.jpeg" alt="">
                     </div>
 
                     <div class="st-text">
 
-                        <h4>Brusly Dion</h4>
+                        <h4>Djibril Mahaman</h4>
 
                         <ul>
                             <li><a href=""><i class="flaticon-twitter"></i></a></li>
@@ -355,7 +365,7 @@ include '../includes/header.php';
                 </div>
 
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
 
                 <div class="single-t-member" data-aos="fade-up" data-aos-duration="2000">
 
@@ -443,7 +453,7 @@ include '../includes/header.php';
 
                 </div>
 
-            </div>
+            </div> -->
 
 
         </div>

@@ -60,7 +60,7 @@ $services = $cn->query("SELECT * FROM services");
 
                                 <li><a href="">Pricing</a></li>
 
-                                <li><a href="">Appointment</a></li>
+                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Appointment</a></li>
 
                                 <li><a href="">Contact</a></li>
 

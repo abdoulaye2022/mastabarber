@@ -37,6 +37,60 @@ if(isset($_POST['add'])) {
     }
 }
 
+// update
+if(isset($_POST['update'])) {
+    if(isset($_POST['id'], $_POST['name'], $_POST['description'], $_POST['price'])) {
+        if(!empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['price'])) {
+            $name = htmlspecialchars(trim($_POST['name']));
+            $description = htmlspecialchars(trim($_POST['description']));
+            $price = htmlspecialchars(trim($_POST['price']));
+            $id = htmlspecialchars(trim($_POST['id']));
+
+            try {
+                $stmt = $cn->prepare("UPDATE services SET name = :name, description = :description, price = :price, status = :status WHERE id = :id");
+                $status = 1;
+                $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+                $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+                $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+                $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            
+                // Exécuter la requête
+                $stmt->execute();
+            
+                $success = "Service is updated successfuly!";
+            } catch (PDOException $e) {
+                $error = 'Erreur du serveur : ' . $e->getMessage();
+            }
+        } else {
+            $error = "All the fields ar required!";
+        }
+    }
+}
+
+// update
+if(isset($_POST['delete'])) {
+    if(isset($_POST['id'])) {
+        if(!empty($_POST['id'])) {
+            $id = htmlspecialchars(trim($_POST['id']));
+
+            try {
+                $stmt = $cn->prepare("DELETE FROM services WHERE id = :id");
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            
+                // Exécuter la requête
+                $stmt->execute();
+            
+                $success = "Service is deleted successfuly!";
+            } catch (PDOException $e) {
+                $error = 'Erreur du serveur : ' . $e->getMessage();
+            }
+        } else {
+            $error = "All the fields ar required!";
+        }
+    }
+}
+
 $services = $cn->query("SELECT * FROM services");
 
 include __DIR__ . '/includes/headerDm.php';
@@ -223,14 +277,67 @@ include __DIR__ . '/includes/headerDm.php';
                                                     <td><?php if($row['status']) { echo "<span class='badge bg-success'>Actif</span>"; } else { echo "<span class='badge bg-danger'>Inactif</span>"; } ?>
                                                     </td>
                                                     <td>
-                                                        <button class="btn btn-md btn-warning edit-item-btn"><i
-                                                                class="bx bx-show"></i></button>
-                                                        <button class="btn btn-md btn-success edit-item-btn"><i
+                                                        <!-- <button class="btn btn-md btn-warning edit-item-btn"><i
+                                                                class="bx bx-show"></i></button> -->
+                                                        <button id="update-btn"
+                                                        data-bs-toggle="modal" data-bs-target="#updateModal_<?php echo $row['id']; ?>" class="btn btn-md btn-success edit-item-btn"><i
                                                                 class="bx bx-edit"></i></button>
-                                                        <button class="btn btn-md btn-danger remove-item-btn"><i
+                                                        <button id="delete-btn"
+                                                        data-bs-toggle="modal" data-bs-target="#deleteModal_<?php echo $row['id']; ?>" class="btn btn-md btn-danger remove-item-btn"><i
                                                                 class="bx bx-trash"></i></button>
                                                     </td>
                                                 </tr>
+                                                <div class="modal fade" id="updateModal_<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Update service</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <form action="" method="POST">
+                                                                <div class="modal-body">
+                                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Name</label>
+                                                                        <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>">
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Description</label>
+                                                                        <textarea class="form-control" name="description" rows="3"><?php echo $row['description']; ?></textarea>
+                                                                    </div>
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Price</label>
+                                                                        <input type="text" name="price" class="form-control" value="<?php echo $row['price']; ?>">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">Close</button>
+                                                                    <button name="update" class="btn btn-primary btn-md" type="submit">Save</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="deleteModal_<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete service</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <form action="" method="POST">
+                                                                <div class="modal-body">
+                                                                    <p>Are you sure you want to delete this service?
+                                                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">No</button>
+                                                                    <button name="delete" class="btn btn-primary btn-md" type="submit">Yes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <?php $i++; } ?>
                                             </tbody>
                                         </table>

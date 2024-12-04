@@ -1,4 +1,6 @@
 <?php
+$services = $cn->query("SELECT * FROM services");
+
 include '../includes/header.php';
 ?>
 
@@ -205,41 +207,15 @@ include '../includes/header.php';
 
                     <h2>Plans & pricing</h2>
                     <ul>
-                        <li>
-                            <p>Classic
-                                Cut.................................................................................</p>
-                            <span>$22 & up</span>
+                    <?php while($row = $services->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <li style="display: flex;">
+                            <p><?php echo $row['name']; ?></p>
+                            <div style="flex: 1; display: flex; justify-content: center; align-items: center">
+                                <div style="border-top: 1px dashed black; width: 90%;"></div>
+                            </div>
+                            <span><?php echo '$' . $row['price']; ?></span>
                         </li>
-                        <li>
-                            <p>Kids Haircut (Age 14 & under) .............................</p><span>$18 & up</span>
-                        </li>
-                        <li>
-                            <p>Buzz Cut (all 1 length).....................................................</p>
-                            <span>$14 & up</span>
-                        </li>
-                        <li>
-                            <p>Straight Razor Shave (head)................................ </p><span>$22 & up</span>
-                        </li>
-                        <li>
-                            <p>Straight Razor Shave.....................................................</p><span>$22 &
-                                up</span>
-                        </li>
-                        <li>
-                            <p>Groomed All Scissor.......................................................</p><span>$24 &
-                                up</span>
-                        </li>
-                        <li>
-                            <p>Deluxe
-                                Cut.................................................................................</p>
-                            <span>$30 & up</span>
-                        </li>
-                        <li>
-                            <p>Deluxe Straight Razor Shave...............................</p><span>$30 & up</span>
-                        </li>
-                        <li>
-                            <p>Mud Mask Facial.................................................................</p>
-                            <span>$25 & up</span>
-                        </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -247,10 +223,10 @@ include '../includes/header.php';
             <div class="col-md-6">
 
                 <div class="service-img">
-                    <img src="assets/img/about/about6.jpg" alt="">
+                    <img src="assets/img/coiffures/service1.jpeg" style="width: 475px; heigth: 276px;" alt="">
                 </div>
                 <div class="service-img">
-                    <img src="assets/img/about/about7.jpg" alt="">
+                    <img src="assets/img/coiffures/service2.jpeg" style="width: 475px; heigth: 276px;" alt="">
                 </div>
             </div>
 

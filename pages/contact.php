@@ -46,8 +46,7 @@ include '../includes/header.php';
                     <div class="single-info">
                         <i class="flaticon-telephone"></i>
                         <h5>Phone</h5>
-                        <p>+1 720.661.2231</p>
-                        <p>+1 720.661.2231</p>
+                        <p>+1 (506) 899 8186</p>
                     </div>
                 </div>
                 <div class="col-md-4">
