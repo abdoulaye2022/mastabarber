@@ -23,7 +23,7 @@ $services = $cn->query("SELECT * FROM services");
 
                         <p>95 Millennium Blvd, Moncton Suite 310, E1E 2G7</p>
 
-                        <p>+1 720.661.2231</p>
+                        <p>+1 (506) 899 8186</p>
 
                         <div class="f-social">
                             <ul>

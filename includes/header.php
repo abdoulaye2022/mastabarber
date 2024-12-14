@@ -308,7 +308,7 @@ if (isset($_POST['book'])) {
 
     <!--Header Area Start-->
 
-    <header class="header-area">
+    <header class="header-area" style="background-color: black;">
 
         <div class="container">
 
@@ -343,15 +343,15 @@ if (isset($_POST['book'])) {
                             <!-- Sample menu definition -->
                             <ul id="main-menu" class="sm sm-mint">
 
-                                <li><a href="accueil">Home</a>
+                                <li style="color: black;"><a href="accueil">Home</a>
                                 </li>
 
-                                <li><a href="service">Services</a>
+                                <li style="color: black;"><a href="service">Services</a>
                                 </li>
 
-                                <li><a href="about-us">About us</a>
+                                <li style="color: black;"><a href="about-us">About us</a>
                                 </li>
-                                <li><a href="contact">Contacts</a>
+                                <li style="color: black;"><a href="contact">Contacts</a>
 
 
                                 </li>

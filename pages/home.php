@@ -14,7 +14,7 @@ include '../includes/header.php';
 ?>
 
 <!--Hero Area Start-->
-<div class="hero-area">
+<div class="hero-area" style="background-color: white;">
 
     <div class="container">
 
@@ -24,9 +24,9 @@ include '../includes/header.php';
 
                 <div class="hero-content">
 
-                    <h1 data-aos="fade-up" data-aos-duration="1500">The beauty of Afro and Canadian men hair</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1500" style="color: black;">The beauty of Afro and Canadian men hair</h1>
 
-                    <p data-aos="fade-up" data-aos-duration="2000">WELCOME</p>
+                    <p data-aos="fade-up" data-aos-duration="2000" style="color: black;">WELCOME</p>
 
                     <a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services" class="btn-1">Appointment</a>
 
@@ -466,11 +466,11 @@ include '../includes/header.php';
 
 <!--Video area Start-->
 
-<div class="video">
+<!-- <div class="video">
 
     <a href="https://www.youtube.com/watch?v=e954hXxSwnE" class="expand-video btn-h"><i class="fa fa-play"></i></a>
 
-</div>
+</div> -->
 
 <!--Video area End-->
 

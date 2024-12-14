@@ -43,9 +43,6 @@ include '../includes/header.php';
 
                     <h2>Mastabarber</h2>
 
-                    <!-- <p class="ab-p">Our barbershop is the territory created purely for males who -->
-                        appreciate premium quality, time and flawless look.</p>
-
                     <p>Masta Barber is a family story of immigrants to Canada who, over time, have cultivated a passion for hairdressing. 
                         For Masta, passion is more important than work, and each client is an opportunity to live a new journey of 
                         discovery and sharing.</p>
@@ -58,13 +55,13 @@ include '../includes/header.php';
                 <div class="inner-ab-img">
 
 
-                    <img src="assets/img/about/inner-about.jpg" alt="">
+                    <img src="assets/img/coiffures/2.jpeg" style="minWidth: 400px; height: 500px" alt="">
 
                 </div>
 
             </div>
 
-            <div class="col-md-12 mt-5">
+            <!-- <div class="col-md-12 mt-5">
 
                 <div class="about-content">
 
@@ -84,7 +81,7 @@ include '../includes/header.php';
 
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
 
@@ -95,18 +92,18 @@ include '../includes/header.php';
 
 <!--Heritage Start-->
 
-<div class="heritage">
+<!-- <div class="heritage">
 
     <h2>Making you look
         good is in our heritage.</h2>
-</div>
+</div> -->
 
 <!--Heritage End-->
 
 
 <!--Team Sectiom Start-->
 
-<div class="team">
+<!-- <div class="team">
 
     <div class="container">
 
@@ -238,7 +235,7 @@ include '../includes/header.php';
 
     </div>
 
-</div>
+</div> -->
 
 <?php
 include __DIR__ . '/../includes/footer.php';

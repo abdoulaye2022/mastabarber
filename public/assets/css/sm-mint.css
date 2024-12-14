@@ -143,7 +143,7 @@ header.mextreo-header-area.nav-fixed nav ul.sm-mint > li > a .sub-arrow{
   }
   .sm-mint a, .sm-mint a:hover, .sm-mint a:focus, .sm-mint a:active, .sm-mint a.highlighted {
     padding: 14px 20px;
-    color: #ffffff !important;
+    color: black !important;
     cursor: pointer;
 
   }
