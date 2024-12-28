@@ -316,13 +316,13 @@ if (isset($_POST['book'])) {
 
                 <div class="col-4 col-md-4">
 
-                    <div class="logo-wrapper" style="background-color: white; max-width: 140px; border-radius: 10px;">
+                    <!-- <div class="logo-wrapper" style="background-color: white; max-width: 140px; border-radius: 10px;">
 
                         <a href="accueil">
 
-                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="">
+                            <img src=" echo BASE_URL; ?>assets/img/logo.png" alt="">
 
-                        </a>
+                        </a> -->
 
                     </div>
 

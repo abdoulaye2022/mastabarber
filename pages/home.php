@@ -22,7 +22,9 @@ include '../includes/header.php';
 
             <div class="col-md-12">
 
-                <div class="hero-content">
+                <div class="hero-content" style="padding-top: 150px; padding-bottom: 150px;">
+
+                    <img src="<?php echo BASE_URL; ?>assets/img/logo.png" style="width: 200px; height: 100px; margin-bottom: 40px;" alt="">
 
                     <h1 data-aos="fade-up" data-aos-duration="1500" style="color: black;">The beauty of Afro and Canadian men hair</h1>
 
