@@ -320,7 +320,7 @@ if (isset($_POST['book'])) {
 
                         <a href="accueil">
 
-                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="" style="margin: 5px;">
+                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="">
 
                         </a>
 
