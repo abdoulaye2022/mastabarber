@@ -191,106 +191,185 @@ if (isset($_POST['book'])) {
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
-    <!-- Basic Page Needs -->
+    <!--- Basic Page Needs  -->
+
     <meta charset="utf-8">
+
     <title><?php echo $translations['welcome']; ?></title>
+
     <meta name="description"
-        content="Welcome to our website dedicated to the beauty of Afro and Canadian hair! We are excited to welcome you into our world where every hair type is celebrated. Whether you are looking for unique designs or vibrant dyes, our team is here to help you express your personal style. Explore our services and let us transform your hair into a work of art. Thank you for visiting us!">
+        content="Welcome to our website dedicated to the beauty of Afro and Canadian hair! We are excited to welcome you into our world where every hair type is celebrated. Whether you are looking for unique designs or vibrant dyes, our team is here to help you express your personal style. Explore our services and let us transform your hair into a work of art. Thank you for visiting us!.">
+
     <meta name="author" content="Abdoulaye Mohamed Ahmed">
+
     <meta name="keywords"
-        content="Men's haircut, Barber shop, Men's grooming, Beard trim, Traditional shaving, Men's hairstyles, Professional barber, Haircuts for men, Beard care, Fade haircut, Men's hair styling, Gentlemen's grooming, Shaving services, Male grooming, Professional men's salon, Hair care for men">
+        content="Coiffure homme, Barber shop, Coupe de cheveux pour hommes, Rasage traditionnel, Entretien de la barbe, Style masculin, Coiffeur pour hommes, Coupe tendance homme, Salon de coiffure homme, Soins capillaires masculins, Barbe et moustache, Dégradé homme, Coiffure professionnelle, Men's haircut, Barber shop, Men's grooming, Beard trim, Traditional shaving, Men's hairstyles, Professional barber, Haircuts for men, Beard care, Fade haircut, Men's hair styling, Gentlemen's grooming, Shaving services">
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Mobile Specific Meta -->
+
+
+    <!-- Mobile Specific Meta  -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+
+
     <!-- Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+
+
     <!-- CSS -->
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/bootstrap.min.css">
-    <!-- jQuery UI CSS -->
+
+    <!-- Jquery ui CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/jquery-ui.css">
+
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/jquery.fancybox.min.css">
+
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/font-awosome.css">
+
     <!-- Flaticon CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/flat-font/flaticon.css">
-    <!-- Ticker CSS -->
+
+    <!-- Ticker css-->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/ticker.min.css">
-    <!-- Owl Carousel Slider -->
+
+    <!--Owl carousel Slider -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/owl.theme.default.min.css">
+
     <!-- Nav Menu CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-core-css.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-mint.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/sm-style.css">
+
     <!-- Animate CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/aos.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/animate.min.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/magnific-popup.css">
+
     <!-- Main StyleSheet CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/style.css">
+
+
     <!-- Favicon -->
+
     <link rel="shortcut icon" type="image/png" href="<?php echo BASE_URL; ?>assets/img/fav-icon.png">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
     <!--[if lt IE 9]>
+
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+        <![endif]-->
+
 </head>
 
 <body>
-    <!-- Preloader -->
+
+
+    <!---Preloder-->
+
     <div id="preloader"></div>
-    <!-- /Preloader -->
 
-    <!-- Scroll Top -->
+    <!-- /Preloder-->
+
+    <!--Scroll Top-->
+
     <button class="scroll-top scroll-to-target" data-target="html">
-        <i class="fas fa-angle-up scrollup-icon"></i>
-    </button>
-    <!-- /Scroll Top -->
 
-    <!-- Header Area Start -->
+        <i class="fas fa-angle-up scrollup-icon"></i>
+
+    </button>
+
+    <!--Scroll Top-->
+
+
+    <!--Header Area Start-->
+
     <header class="header-area" style="background-color: black;">
+
         <div class="container">
+
             <div class="row">
+
                 <div class="col-4 col-md-4">
+
                     <div class="logo-wrapper" style="background-color: white; max-width: 140px; border-radius: 10px;">
-                        <a href="home">
-                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="Masta Barber Logo">
+
+                        <a href="accueil">
+
+                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="">
+
                         </a>
+
                     </div>
+
                 </div>
+
                 <div class="col-8 col-md-8">
+
                     <div class="menu-wrapper">
+
                         <nav class="main-nav">
+
                             <!-- Mobile menu toggle button (hamburger/x icon) -->
                             <input id="main-menu-state" type="checkbox" />
                             <label class="main-menu-btn" for="main-menu-state">
                                 <span class="main-menu-btn-icon"></span>
                             </label>
 
-                            <!-- Menu navigation -->
+                            <!-- Sample menu definition -->
                             <ul id="main-menu" class="sm sm-mint">
-                                <li><a href="home">Home</a></li>
-                                <li><a href="services">Services</a></li>
-                                <li><a href="about-us">About Us</a></li>
-                                <li><a href="contact">Contact</a></li>
-                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Book Appointment</a></li>
+
+                                <li style="color: black;"><a href="accueil">Home</a>
+                                </li>
+
+                                <li style="color: black;"><a href="service">Services</a>
+                                </li>
+
+                                <li style="color: black;"><a href="about-us">About us</a>
+                                </li>
+                                <li style="color: black;"><a href="contact">Contacts</a>
+
+
+                                </li>
+
+                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Appointment</a></li>
+
                             </ul>
+
                         </nav>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
-    <!-- Header Area End -->
+
+    <!--Header Area End-->
