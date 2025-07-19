@@ -1,9 +1,8 @@
-<!--Footer Area Start-->
+<!-- Footer Area Start -->
 <?php
 $services = $cn->query("SELECT * FROM services");
-
 ?>
-<!-- Footer Area Start -->
+
 <div class="footer-area">
     <div class="footer-details">
         <div class="container">
@@ -13,7 +12,7 @@ $services = $cn->query("SELECT * FROM services");
                         <div class="f-logo">
                             <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="Masta Barber Logo">
                         </div>
-                        <p>95 Millennium Blvd, Moncton Suite 310, E1E 2G7</p>
+                        <p>95 Millennium Blvd, Suite 310<br>Moncton, NB E1E 2G7</p>
                         <p>+1 (506) 899 8186</p>
                         <div class="f-social">
                             <ul>
@@ -36,9 +35,8 @@ $services = $cn->query("SELECT * FROM services");
                             <ul>
                                 <li><a href="about-us">About Us</a></li>
                                 <li><a href="services">Services</a></li>
-                                <li><a href="pricing">Pricing</a></li>
-                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Book Appointment</a></li>
                                 <li><a href="contact">Contact</a></li>
+                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Book Appointment</a></li>
                             </ul>
                         </div>
                     </div>
@@ -85,7 +83,7 @@ $services = $cn->query("SELECT * FROM services");
 <div id="imageModal"
     style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;"
     onclick="closeImage()">
-    <img id="modalImage" src="" alt="Gallery image preview" style="max-width: 400px; max-height: 400px;">
+    <img id="modalImage" src="" alt="Gallery image preview" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
 </div>
 
 <!-- Booking Modal -->
@@ -102,32 +100,43 @@ $services = $cn->query("SELECT * FROM services");
             <div class="booked" style="padding-top: 0px;">
                 <form class="row" style="padding-top: 0px;" method="POST" action="">
                     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+                    
                     <div class="form-group col-md-12">
                         <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
                     </div>
+                    
                     <div class="form-group col-md-6">
                         <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" required>
                     </div>
+                    
                     <div class="form-group col-md-6">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
                     </div>
+                    
                     <div class="form-group col-md-6">
                         <input type="date" class="form-control" name="date" id="date" required>
                     </div>
+                    
                     <div class="form-group col-md-6">
                         <select class="form-control" id="availability" name="availability" required>
                             <option value="">Select Availability</option>
                         </select>
                     </div>
+                    
                     <div class="form-group col-md-12">
-                        <select class="form-control" name="service" required>
-                            <option>Select Services</option>
-                            <?php while($row = $services->fetch(PDO::FETCH_ASSOC)) { ?>
-                            <option value="<?php echo $row['id']; ?>">
-                                <?php echo $row['name'] . ' - $' . $row['price']; ?></option>
+                        <select class="form-control" name="service" id="service" required>
+                            <option value="">Select Services</option>
+                            <?php 
+                            // Reset the result pointer to fetch again
+                            $services = $cn->query("SELECT * FROM services");
+                            while($row = $services->fetch(PDO::FETCH_ASSOC)) { ?>
+                                <option value="<?php echo $row['id']; ?>">
+                                    <?php echo htmlspecialchars($row['name']) . ' - $' . number_format($row['price'], 2); ?>
+                                </option>
                             <?php } ?>
                         </select>
                     </div>
+                    
                     <div class="form-group col-md-12" style="display: flex; align-items: center;">
                         <input class="form-check-input" type="checkbox" value="1" name="newsletter"
                             id="flexCheckDefault" style="margin-left: 6px;">
@@ -137,107 +146,152 @@ $services = $cn->query("SELECT * FROM services");
                         </label>
                     </div>
 
-                    <button type="submit" name="book" id="submit" class="btn-1">Book Appointment</button>
+                    <div class="form-group col-md-12">
+                        <button type="submit" name="book" id="submit" class="btn-1">Book Appointment</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<!-- JavaScript -->
+<!-- Load jQuery first -->
+<script src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>
+
+<!-- JavaScript Functions -->
 <script>
-function showImage(event, src) {
-    event.preventDefault(); // Prevent link opening
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    modalImage.src = src;
-    modal.style.display = 'flex'; // Show modal container
-}
+$(document).ready(function() {
+    console.log('Footer JavaScript loaded');
+    
+    // Image gallery functions
+    window.showImage = function(event, src) {
+        event.preventDefault();
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        if (modal && modalImage) {
+            modalImage.src = src;
+            modal.style.display = 'flex';
+        }
+    };
 
-function closeImage() {
-    const modal = document.getElementById('imageModal');
-    modal.style.display = 'none'; // Hide modal container
-}
+    window.closeImage = function() {
+        const modal = document.getElementById('imageModal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    };
 
-document.getElementById('phone').addEventListener('blur', function() {
-    const phone = this.value;
-
-    if (phone.trim() !== "") {
-        // Perform AJAX request
-        fetch('ajax_check_user', {
+    // Phone lookup functionality
+    $('#phone').on('blur', function() {
+        const phone = $(this).val().trim();
+        
+        if (phone !== "") {
+            $.ajax({
+                url: 'ajax_check_user',
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                data: { phone: phone },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.success) {
+                        $('#fullname').val(data.fullname || '');
+                        $('#email').val(data.email || '');
+                    } else {
+                        $('#fullname').val('');
+                        $('#email').val('');
+                    }
                 },
-                body: `phone=${encodeURIComponent(phone)}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Fill fields with returned data
-                    document.getElementById('fullname').value = data.fullname;
-                    document.getElementById('email').value = data.email;
-                } else {
-                    // Reset fields if no user found
-                    document.getElementById('fullname').value = "";
-                    document.getElementById('email').value = "";
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', error);
                 }
-            })
-            .catch(error => console.error('Error:', error));
+            });
+        }
+    });
+
+    // Date availability functionality
+    $('#date').on('change', function() {
+        const selectedDate = $(this).val();
+        
+        if (selectedDate.trim() !== "") {
+            $.ajax({
+                url: 'ajax_get_availabilities',
+                method: 'POST',
+                data: { date: selectedDate },
+                dataType: 'json',
+                success: function(data) {
+                    const availabilityDropdown = $('#availability');
+                    availabilityDropdown.html('<option value="">Select Availability</option>');
+
+                    if (data.success && data.availabilities && data.availabilities.length > 0) {
+                        $.each(data.availabilities, function(index, avail) {
+                            const option = $('<option></option>')
+                                .attr('value', avail.id)
+                                .text(avail.start_time + ' - ' + avail.end_time);
+                            availabilityDropdown.append(option);
+                        });
+                    } else {
+                        alert("No available slots for the selected date.");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', error);
+                    alert("Error loading availabilities. Please try again.");
+                }
+            });
+        }
+    });
+
+    // Form validation
+    $('#myModal form').on('submit', function(e) {
+        const requiredFields = ['phone', 'fullname', 'date', 'availability', 'service'];
+        let isValid = true;
+        
+        requiredFields.forEach(function(field) {
+            const value = $('#' + field).val();
+            if (!value || value.trim() === '') {
+                isValid = false;
+                $('#' + field).addClass('is-invalid');
+            } else {
+                $('#' + field).removeClass('is-invalid');
+            }
+        });
+
+        if (!isValid) {
+            e.preventDefault();
+            alert('Please fill in all required fields.');
+        }
+    });
+
+    // Reset form when modal is hidden
+    $('#myModal').on('hidden.bs.modal', function() {
+        $(this).find('form')[0].reset();
+        $(this).find('.is-invalid').removeClass('is-invalid');
+        $('#availability').html('<option value="">Select Availability</option>');
+    });
+});
+
+// Close image modal when clicking outside the image
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'imageModal') {
+        closeImage();
     }
 });
 
-document.getElementById('date').addEventListener('change', function() {
-    const selectedDate = this.value;
-
-    if (selectedDate.trim() !== "") {
-        // Perform AJAX request to get availabilities
-        fetch('ajax_get_availabilities', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `date=${encodeURIComponent(selectedDate)}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                const availabilityDropdown = document.getElementById('availability');
-                availabilityDropdown.innerHTML =
-                '<option value="">Select Availability</option>'; // Reset options
-
-                if (data.success && data.availabilities.length > 0) {
-                    // Add availabilities to dropdown
-                    data.availabilities.forEach(avail => {
-                        const option = document.createElement('option');
-                        option.value = avail.id;
-                        option.textContent = `${avail.start_time} - ${avail.end_time}`;
-                        availabilityDropdown.appendChild(option);
-                    });
-                } else {
-                    alert("No available slots for the selected date.");
-                }
-            })
-            .catch(error => console.error('Error:', error));
+// Escape key to close image modal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeImage();
     }
 });
 </script>
 
-<!-- jQuery Plugin -->
-<script src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap JS -->
+<!-- Load other JavaScript files -->
 <script src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>
-<!-- AOS JS Plugin -->
 <script src="<?php echo BASE_URL; ?>assets/js/aos.js"></script>
-<!-- jQuery UI JS -->
 <script src="<?php echo BASE_URL; ?>assets/js/jquery-ui.js"></script>
-<!-- Navigation JS -->
 <script src="<?php echo BASE_URL; ?>assets/js/jquery.smartmenus.js"></script>
-<!-- Owl Carousel Slider -->
 <script src="<?php echo BASE_URL; ?>assets/js/owl.carousel.min.js"></script>
-<!-- JS Plugins -->
 <script src="<?php echo BASE_URL; ?>assets/js/jquery.fancybox.min.js"></script>
-<script src='<?php echo BASE_URL; ?>assets/js/jquery.magnific-popup.min.js'></script>
-<!-- Main Script -->
+<script src="<?php echo BASE_URL; ?>assets/js/jquery.magnific-popup.min.js"></script>
 <script src="<?php echo BASE_URL; ?>assets/js/theme.js"></script>
 
 </body>

@@ -34,13 +34,16 @@ switch ($pathAfterPublic) {
     case 'accueil':
         require_once(__DIR__ . '/../pages/home.php');
         break;
+    case 'home':
+        require_once(__DIR__ . '/../pages/home.php');
+        break;
     case 'contact':
         require_once(__DIR__ . '/../pages/contact.php');
         break;
     case 'about-us':
         require_once(__DIR__ . '/../pages/about-us.php');
         break;
-    case 'service':
+    case 'services':
         require_once(__DIR__ . '/../pages/service.php');
         break;
     case 'login':
