@@ -46,33 +46,6 @@ switch ($pathAfterPublic) {
     case 'services':
         require_once(__DIR__ . '/../pages/service.php');
         break;
-    case 'login':
-        require_once(__DIR__ . '/../dm_dash/login.php');
-        break;
-    case 'dashboard':
-        require_once(__DIR__ . '/../dm_dash/dashboard.php');
-        break;
-    case 'logout':
-        require_once(__DIR__ . '/../dm_dash/includes/logout.php');
-        break;
-    case 'users-management':
-        require_once(__DIR__ . '/../dm_dash/users.php');
-        break;
-    case 'services-management':
-        require_once(__DIR__ . '/../dm_dash/services.php');
-        break;
-    case 'customers-management':
-        require_once(__DIR__ . '/../dm_dash/customers.php');
-        break;
-    case 'availabilities-management':
-        require_once(__DIR__ . '/../dm_dash/availabilities.php');
-        break;
-    case 'ajax_check_user':
-        require_once(__DIR__ . '/../dm_dash/ajax/check_user.php');
-        break;
-    case 'ajax_get_availabilities':
-        require_once(__DIR__ . '/../dm_dash/ajax/get_availabilities.php');
-        break;
     case 'not-found':
         require_once(__DIR__ . '/../pages/404.php');
         break;

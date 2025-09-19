@@ -14,7 +14,7 @@ include '../includes/header.php';
                 <div class="page-tittle">
                     <h2>404</h2>
                     <ul class="breadcam">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><i class="fas fa-angle-right"></i></li>
                         <li>404</li>
                     </ul>
@@ -39,7 +39,7 @@ include '../includes/header.php';
             <h2>Sorry! Page Not Found!</h2>
             <p>Oops! The page you are looking for does not exist.
                 Please return to the site’s homepage.</p>
-            <a href="index.html" class="btn-1">Back to Home</a>
+            <a href="home" class="btn-1">Back to Home</a>
         </div>
     </div>
 </div>

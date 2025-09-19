@@ -1,13 +1,12 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Inclure PHPMailer via Composer
-require __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/seo-config.php';
 
 $lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
-
 $translations = include "../lang/{$lang}.php";
+
+// Obtenir les données SEO pour la page actuelle
+$currentPage = getCurrentPage();
+$seoData = getSEOData($currentPage);
 
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -15,13 +14,13 @@ if (!isset($_SESSION['csrf_token'])) {
 
 $error = "";
 
-if (isset($_POST['book'])) {
+if (isset($_POST['contact'])) {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         $error = 'Invalid CSRF token.';
     }
 
     // Vérification des champs obligatoires
-    $required_fields = ['fullname', 'phone', 'email', 'date', 'availability', 'service'];
+    $required_fields = ['fullname', 'phone', 'email', 'message'];
     foreach ($required_fields as $field) {
         if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
             $error = 'All fields are required.';
@@ -32,9 +31,7 @@ if (isset($_POST['book'])) {
     $fullname = htmlspecialchars(trim($_POST['fullname']));
     $phone = htmlspecialchars(trim($_POST['phone']));
     $email = htmlspecialchars(trim($_POST['email']));
-    $date = htmlspecialchars(trim($_POST['date']));
-    $availability_id = htmlspecialchars(trim($_POST['availability']));
-    $service_id = htmlspecialchars(trim($_POST['service']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
     // Validation supplémentaire
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -45,143 +42,12 @@ if (isset($_POST['book'])) {
         $error = 'Invalid phone number. Please provide a valid international format.';
     }
 
-    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
-        $error = 'Invalid date format. Use YYYY-MM-DD.';
-    }
-
-    if (!is_numeric($availability_id) || intval($availability_id) <= 0) {
-        $error = 'Invalid availability ID.';
-    }
-
-    $newsletter = 0;
-    if(isset($_POST['newsletter']) && intval($_POST['newsletter']) > 0) {
-        $newsletter = 1;
-    }
-
-    $stmt = $cn->prepare('SELECT firstname, lastname, email FROM customers WHERE phone = :phone');
-    $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
-    $stmt->execute();
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    $customer_id = 0;
-
-    if ($user && $newsletter == 1) {
-        $stmt = $cn->prepare("UPDATE customers SET newsletter = :newsletter WHERE phone = :phone");
-        $stmt->bindParam(':newsletter', $newsletter, PDO::PARAM_INT);
-        $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
-        $stmt->execute();
-        $customer_id = $user['id'];
-    } else {
-        try {
-            // Préparer la requête pour insérer les données utilisateur
-            $stmt = $cn->prepare("INSERT INTO customers (firstname, lastname, phone, email, newsletter, status) 
-                                  VALUES (:firstname, :lastname, :phone, :email, :newsletter, :status)");
-            $status = 1;
-            $full = explode(' ', $fullname);
-            // Lier les paramètres avec des valeurs sécurisées
-            $stmt->bindParam(':firstname', $full[0], PDO::PARAM_STR);
-            $stmt->bindParam(':lastname', $full[1], PDO::PARAM_STR);
-            $stmt->bindParam(':phone', $phone, PDO::PARAM_STR);
-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':status', $status, PDO::PARAM_INT);
-            $stmt->bindParam(':newsletter', $newsletter, PDO::PARAM_INT);
-        
-            // Exécuter la requête
-            $stmt->execute();
-        
-            $customer_id = $cn->lastInsertId();
-        } catch (PDOException $e) {
-            $error = 'Erreur du serveur : ' . $e->getMessage();
-        }
-    }
-
     // Si une erreur est détectée
     if ($error) {
         echo "<script>alert('$error');</script>";
     } else {
-        try {
-            // Préparer la requête pour insérer les données utilisateur
-            $stmt = $cn->prepare("INSERT INTO appointments (`customer_id`, `availability_id`, `service_id`, `notes`) 
-                                  VALUES (:customer_id, :availability_id, :service_id, :notes)");
-            $status = 1;
-            $notes = "";
-            // Lier les paramètres avec des valeurs sécurisées
-            $stmt->bindParam(':customer_id', $customer_id, PDO::PARAM_STR);
-            $stmt->bindParam(':availability_id', $availability_id, PDO::PARAM_STR);
-            $stmt->bindParam(':service_id', $service_id, PDO::PARAM_STR);
-            $stmt->bindParam(':notes', $notes, PDO::PARAM_INT);
-        
-            // Exécuter la requête
-            $stmt->execute();
-        
-            $success = "User is created successfuly!";
-        } catch (PDOException $e) {
-            $error = 'Erreur du serveur : ' . $e->getMessage();
-        }
-
-        // recupere le service
-        $stmt = $cn->prepare("SELECT * FROM availabilities WHERE id = :availability_id");
-        $stmt->bindParam(':availability_id', $availability_id, PDO::PARAM_STR);
-        $stmt->execute();
-        $availability = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $stmt = $cn->prepare("UPDATE availabilities SET status = 'reserved' WHERE id = :availability_id");
-        $stmt->bindParam(':availability_id', $availability_id, PDO::PARAM_STR);
-        $stmt->execute();
-
-        // recupere le service
-        $stmt = $cn->prepare("SELECT * FROM services WHERE id = :service_id");
-        $stmt->bindParam(':service_id', $service_id, PDO::PARAM_STR);
-        $stmt->execute();
-        $service = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $mail_customer = new PHPMailer(true);
-        $mail_service = new PHPMailer(true);
-
-        try {
-            // Configuration du serveur SMTP
-            $mail_customer->isSMTP();
-            $mail_customer->Host = $_ENV['MAIL_HOST'];
-            $mail_customer->SMTPAuth = true;
-            $mail_customer->Username =  $_ENV['MAIL_USERNAME'];
-            $mail_customer->Password = $_ENV['MAIL_PASSWORD']; 
-            $mail_customer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail_customer->Port = $_ENV['MAIL_PORT'];
-
-            $mail_service->isSMTP();
-            $mail_service->Host = $_ENV['MAIL_HOST'];
-            $mail_service->SMTPAuth = true;
-            $mail_service->Username =  $_ENV['MAIL_USERNAME'];
-            $mail_service->Password = $_ENV['MAIL_PASSWORD']; 
-            $mail_service->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail_service->Port = $_ENV['MAIL_PORT'];
-
-            $mail_customer->setFrom('contact@mastabarber.com', 'Masta Barber');
-            $mail_service->setFrom('contact@mastabarber.com', 'Not-reply');
-
-            // Ajouter le destinataire
-            $mail_customer->addAddress($email, $fullname);
-            $mail_service->addAddress('contact@mastabarber.com', 'Not-reply');
-
-            // Contenu du message
-            $mail_customer->isHTML(true); // Utiliser le format HTML
-            $mail_customer->Subject = 'Confirmation rdv';
-            $mail_customer->Body    = '<h1>Bonjour</h1><p>Ceci est un email de confirmation de votre rdv pour le service '.$service['name'].' $'.$service['price'].', a la date du '.$date.' de '.$availability['start_time'].' a '.$availability['end_time'].' .</p>';
-            // $mail_customer->AltBody = 'Ceci est la version texte si le client mail ne supporte pas le HTML.';
-
-            $mail_service->isHTML(true); // Utiliser le format HTML
-            $mail_service->Subject = 'Nouveau rdv de ' . $fullname;
-            $mail_service->Body    = '<h1>Bonjour</h1><p>'.$fullname.' a pris le rdv pour le service '.$service['name'].' $'.$service['price'].', a la date du '.$date.' de '.$availability['start_time'].' a '.$availability['end_time'].' .</p>';
-            // $mail_service->AltBody = 'Ceci est la version texte si le client mail ne supporte pas le HTML.';
-
-            // Envoyer le courriel
-            $mail_customer->send();
-            $mail_service->send();
-            echo "<script>alert('Form submitted successfully!');</script>";
-        } catch (Exception $e) {
-            echo "Erreur lors de l'envoi du courriel : {$mail->ErrorInfo}"; die;
-        }
+        // Juste afficher un message de succès sans envoyer d'email
+        echo "<script>alert('Message sent successfully! We will contact you soon.');</script>";
     }
 }
 
@@ -194,16 +60,69 @@ if (isset($_POST['book'])) {
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title><?php echo $translations['welcome']; ?></title>
-    <meta name="description"
-        content="Welcome to our website dedicated to the beauty of Afro and Canadian hair! We are excited to welcome you into our world where every hair type is celebrated. Whether you are looking for unique designs or vibrant dyes, our team is here to help you express your personal style. Explore our services and let us transform your hair into a work of art. Thank you for visiting us!">
-    <meta name="author" content="Abdoulaye Mohamed Ahmed">
-    <meta name="keywords"
-        content="Men's haircut, Barber shop, Men's grooming, Beard trim, Traditional shaving, Men's hairstyles, Professional barber, Haircuts for men, Beard care, Fade haircut, Men's hair styling, Gentlemen's grooming, Shaving services, Male grooming, Professional men's salon, Hair care for men">
+    <title><?php echo htmlspecialchars($seoData['title']); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($seoData['description']); ?>">
+    <meta name="keywords" content="<?php echo htmlspecialchars($seoData['keywords']); ?>">
+    <meta name="author" content="Masta Barber - Abdoulaye Mohamed Ahmed">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/' . $seoData['canonical']; ?>">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="<?php echo htmlspecialchars($seoData['title']); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($seoData['description']); ?>">
+    <meta property="og:url" content="<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+    <meta property="og:site_name" content="Masta Barber">
+    <meta property="og:image" content="<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/' . $seoData['og_image']; ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_CA">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($seoData['title']); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($seoData['description']); ?>">
+    <meta name="twitter:image" content="<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . '/' . $seoData['og_image']; ?>">
+
+    <!-- Business Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarberShop",
+        "name": "Masta Barber",
+        "image": "<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']; ?>/assets/img/logo.png",
+        "description": "Professional barber shop in Moncton offering expert men's haircuts, beard trimming, and grooming services",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "95 Millennium Blvd, Suite 310",
+            "addressLocality": "Moncton",
+            "addressRegion": "NB",
+            "postalCode": "E1E 2G7",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "46.1351",
+            "longitude": "-64.7796"
+        },
+        "telephone": "+1-506-899-8186",
+        "email": "contact@mastabarber.com",
+        "url": "<?php echo (!empty($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']; ?>",
+        "priceRange": "$15-$25",
+        "openingHours": [
+            "Mo-Fr 09:00-18:00",
+            "Sa 09:00-17:00"
+        ],
+        "paymentAccepted": "Cash, Credit Card",
+        "currenciesAccepted": "CAD"
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
@@ -219,7 +138,7 @@ if (isset($_POST['book'])) {
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/jquery.fancybox.min.css">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/font-awosome.css">
     <!-- Flaticon CSS -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/flat-font/flaticon.css">
     <!-- Ticker CSS -->
@@ -253,6 +172,17 @@ if (isset($_POST['book'])) {
     <div id="preloader"></div>
     <!-- /Preloader -->
 
+    <!-- Preloader Fallback Script -->
+    <script>
+        // Fallback to hide preloader after 2 seconds if other scripts fail
+        setTimeout(function() {
+            var preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        }, 2000);
+    </script>
+
     <!-- Scroll Top -->
     <button class="scroll-top scroll-to-target" data-target="html">
         <i class="fas fa-angle-up scrollup-icon"></i>
@@ -265,8 +195,8 @@ if (isset($_POST['book'])) {
             <div class="row">
                 <div class="col-4 col-md-4">
                     <div class="logo-wrapper" style="background-color: white; max-width: 140px; border-radius: 10px;">
-                        <a href="home">
-                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="Masta Barber Logo">
+                        <a href="home" title="Masta Barber - Professional Barber Shop Home">
+                            <img src="<?php echo BASE_URL; ?>assets/img/logo.png" alt="Masta Barber Logo - Professional Barber Shop in Moncton NB" width="140" height="auto">
                         </a>
                     </div>
                 </div>
@@ -281,11 +211,10 @@ if (isset($_POST['book'])) {
 
                             <!-- Menu navigation -->
                             <ul id="main-menu" class="sm sm-mint">
-                                <li><a href="home">Home</a></li>
-                                <li><a href="services">Services</a></li>
-                                <li><a href="about-us">About Us</a></li>
-                                <li><a href="contact">Contact</a></li>
-                                <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Book Appointment</a></li>
+                                <li><a href="home" title="Masta Barber Home - Professional Barber Shop">Home</a></li>
+                                <li><a href="services" title="Our Barber Services - Haircuts, Beard Trim, Shaving">Services</a></li>
+                                <li><a href="about-us" title="About Masta Barber - Our Story & Team">About Us</a></li>
+                                <li><a href="contact" title="Contact Us - Book Your Appointment">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

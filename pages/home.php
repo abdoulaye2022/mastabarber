@@ -1,14 +1,4 @@
 <?php
-if (!isset($_COOKIE['has_visited'])) {
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $stmt = $cn->prepare("INSERT INTO visits (ip_address) VALUES (:ip)");
-    $stmt->bindParam(':ip', $ip);
-    $stmt->execute();
-
-    // Définir un cookie pour 24 heures
-    setcookie('has_visited', 'true', time() + 86400); // 86400 = 24 heures
-}
-
 include '../includes/header.php';
 ?>
 

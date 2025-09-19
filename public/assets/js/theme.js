@@ -53,6 +53,14 @@ AOS.init({
 
 
 //**================== Preloder========================*//
+$(document).ready(function() {
+  // Hide preloader after a short delay to ensure page is ready
+  setTimeout(function() {
+    $('#preloader').fadeOut('slow', function() { $(this).remove(); });
+  }, 500);
+});
+
+// Fallback: also hide on window load
 $(window).on('load', function() {
   $('#preloader').fadeOut('slow', function() { $(this).remove(); });
 });

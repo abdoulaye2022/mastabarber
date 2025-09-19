@@ -1,5 +1,11 @@
 <?php
-$services = $cn->query("SELECT * FROM services");
+// Services statiques
+$services = [
+    ['name' => 'Haircut & Styling', 'price' => 25, 'description' => 'Professional haircut and styling'],
+    ['name' => 'Beard Trim', 'price' => 15, 'description' => 'Expert beard trimming and shaping'],
+    ['name' => 'Hot Towel Shave', 'price' => 20, 'description' => 'Traditional hot towel shave experience'],
+    ['name' => 'Hair Wash', 'price' => 10, 'description' => 'Professional hair washing and conditioning']
+];
 
 include '../includes/header.php';
 ?>
@@ -17,7 +23,7 @@ include '../includes/header.php';
                 <div class="page-tittle">
                     <h2>Our Services</h2>
                     <ul class="breadcam">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><i class="fas fa-angle-right"></i></li>
                         <li>Our Services</li>
                     </ul>
@@ -190,7 +196,7 @@ include '../includes/header.php';
 
     <h2>We're Here For You!
     </h2>
-    <a href="" class="btn-1">MAKE AN APPOINMENT</a>
+    <a href="#myModal" data-toggle="modal" class="btn-1">MAKE AN APPOINTMENT</a>
 </div>
 
 <!--Heritage End-->
@@ -207,7 +213,7 @@ include '../includes/header.php';
 
                     <h2>Plans & pricing</h2>
                     <ul>
-                    <?php while($row = $services->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <?php foreach($services as $row) { ?>
                         <li style="display: flex;">
                             <p><?php echo $row['name']; ?></p>
                             <div style="flex: 1; display: flex; justify-content: center; align-items: center">

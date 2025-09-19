@@ -1,7 +1,12 @@
 <!--Footer Area Start-->
 <?php
-$services = $cn->query("SELECT * FROM services");
-
+// Services statiques pour le footer
+$services = [
+    ['name' => 'Haircut & Styling'],
+    ['name' => 'Beard Trim'],
+    ['name' => 'Hot Towel Shave'],
+    ['name' => 'Hair Wash']
+];
 ?>
 <div class="footer-area">
 
@@ -54,15 +59,15 @@ $services = $cn->query("SELECT * FROM services");
 
                         <div class="f-social">
                             <ul>
-                                <li><a href="">About Us</a></li>
+                                <li><a href="about-us">About Us</a></li>
 
-                                <li><a href="">Service</a></li>
+                                <li><a href="services">Service</a></li>
 
-                                <li><a href="">Pricing</a></li>
+                                <li><a href="services">Pricing</a></li>
 
                                 <li><a target="_blank" href="https://book.squareup.com/appointments/e6i0mgt264qz3j/location/L6JV92H4GMYP0/services">Appointment</a></li>
 
-                                <li><a href="">Contact</a></li>
+                                <li><a href="contact">Contact</a></li>
 
                             </ul>
                         </div>
@@ -168,9 +173,9 @@ $services = $cn->query("SELECT * FROM services");
                     <div class="form-group col-md-12">
                         <select class="form-control" name="service" required>
                             <option>Select Services</option>
-                            <?php while($row = $services->fetch(PDO::FETCH_ASSOC)) { ?>
-                            <option value="<?php echo $row['id']; ?>">
-                                <?php echo $row['name'] . '- $ ' . $row['price']; ?></option>
+                            <?php foreach($services as $row) { ?>
+                            <option value="<?php echo $row['name']; ?>">
+                                <?php echo $row['name']; ?></option>
                             <?php } ?>
                         </select>
                     </div>

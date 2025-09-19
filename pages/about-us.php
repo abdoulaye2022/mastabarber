@@ -14,7 +14,7 @@ include '../includes/header.php';
                 <div class="page-tittle">
                     <h2>About Us</h2>
                     <ul class="breadcam">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home">Home</a></li>
                         <li><i class="fas fa-angle-right"></i></li>
                         <li>About Us</li>
                     </ul>
