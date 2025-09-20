@@ -14,6 +14,12 @@ $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // echo "DEBUG: requestUri = " . $requestUri . "<br>";
 // echo "DEBUG: publicDir = " . $publicDir . "<br>";
 
+// Vérifier si c'est une route API - laisser passer sans traitement
+if (strpos($requestUri, '/api/') === 0) {
+    // C'est une route API, arrêter le traitement du routeur
+    exit;
+}
+
 // Vérifier si l'URL contient une extension .php
 if (preg_match('/\.php$/', $requestUri)) {
     // Rediriger vers la page 404
