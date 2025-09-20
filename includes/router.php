@@ -1,23 +1,39 @@
 <?php
-// Définir le dossier public
-$publicDir = '/mastabarber/public';
+// Détecter l'environnement et définir le dossier public
+if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1' || strpos($_SERVER['HTTP_HOST'], 'localhost:') === 0) {
+    $publicDir = '/public';
+} else {
+    $publicDir = '/mastabarber/public';
+}
 
 // Récupérer l'URL complète après le nom de domaine
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+// Debug temporaire - à supprimer après
+// echo "DEBUG: REQUEST_URI = " . $_SERVER['REQUEST_URI'] . "<br>";
+// echo "DEBUG: requestUri = " . $requestUri . "<br>";
+// echo "DEBUG: publicDir = " . $publicDir . "<br>";
+
 // Vérifier si l'URL contient une extension .php
 if (preg_match('/\.php$/', $requestUri)) {
     // Rediriger vers la page 404
-    header("Location: /mastabarber/public/not-found");
+    header("Location: /not-found");
     exit;
 }
 
 // Supprimer le chemin vers le dossier public pour obtenir le path après
 $pathAfterPublic = str_replace($publicDir, '', $requestUri);
 
+// Debug temporaire - à supprimer après
+// echo "DEBUG: pathAfterPublic after replace = " . $pathAfterPublic . "<br>";
+
 // Nettoyer le path (supprimer les slashs initiaux et les extensions .php)
 $pathAfterPublic = trim($pathAfterPublic, '/');
 $pathAfterPublic = str_replace('.php', '', $pathAfterPublic);
+
+// Debug temporaire - à supprimer après
+// echo "DEBUG: final pathAfterPublic = " . $pathAfterPublic . "<br>";
+// echo "DEBUG: switching on = '" . $pathAfterPublic . "'<br>";
 
 // Fonction pour sécuriser les includes
 function secureInclude($filePath) {
@@ -45,6 +61,14 @@ switch ($pathAfterPublic) {
         break;
     case 'services':
         require_once(__DIR__ . '/../pages/service.php');
+        break;
+    case 'reset-password':
+    case 'reset_password':
+        require_once(__DIR__ . '/../pages/reset_password.php');
+        break;
+    case 'verify-email':
+    case 'verify_email':
+        require_once(__DIR__ . '/../pages/verify_email.php');
         break;
     case 'not-found':
         require_once(__DIR__ . '/../pages/404.php');
