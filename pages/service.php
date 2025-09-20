@@ -39,7 +39,7 @@ include '../includes/header.php';
 <!--Hero Area End-->
 
 <!--Service Area Start-->
-<div class="service mar-top-140">
+<div class="service">
 
     <div class="container">
         <h2>What we do</h2>

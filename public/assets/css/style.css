@@ -1251,7 +1251,7 @@ header.header-area {
 /*=====================Service Area Style Start==========================*/
 .service {
   position: relative;
-  margin-top: 80px;
+  margin-top: 0px;
   text-align: center;
   padding: 80px 0px;
   background: #f8f8f7; }
@@ -1770,7 +1770,7 @@ header.header-area {
 /*=========================Footer Area Start===========================*/
 .footer-area {
   position: relative;
-  margin-top: 150px;
+  margin-top: 0px;
   background: #333333; }
   .footer-area .footer-details {
     position: relative;
