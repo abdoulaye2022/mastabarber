@@ -9,18 +9,6 @@ $error = '';
 $success = '';
 $tokenData = null;
 
-// Fonction pour se connecter à la base de données
-function getConnection($host, $dbname, $username, $password) {
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        return $pdo;
-    } catch (PDOException $e) {
-        error_log("Database connection error: " . $e->getMessage());
-        return null;
-    }
-}
 
 // Fonction pour vérifier le token de vérification d'email
 function verifyEmailToken($pdo, $token) {
@@ -31,7 +19,7 @@ function verifyEmailToken($pdo, $token) {
     try {
         $tokenHash = hash('sha256', $token);
 
-        $sql = "SELECT u.id, u.first_name, u.last_name, u.email, u.email_verified_at, evt.expires_at, evt.used_at
+        $sql = "SELECT u.id, u.first_name, u.last_name, u.email, u.email_verified_at, u.email_verified, evt.expires_at, evt.used_at
                 FROM email_verification_tokens evt
                 JOIN users u ON evt.user_id = u.id
                 WHERE evt.token_hash = ? AND evt.expires_at > NOW() AND evt.used_at IS NULL";
@@ -63,7 +51,7 @@ function verifyEmailWithToken($pdo, $token) {
         }
 
         // Vérifier si l'email est déjà vérifié
-        if ($tokenData['email_verified_at'] !== null) {
+        if ($tokenData['email_verified_at'] !== null || $tokenData['email_verified'] == 1) {
             $pdo->rollBack();
             return ['success' => false, 'error' => 'Email déjà vérifié'];
         }
@@ -71,7 +59,7 @@ function verifyEmailWithToken($pdo, $token) {
         $tokenHash = hash('sha256', $token);
 
         // Marquer l'email comme vérifié
-        $sql = "UPDATE users SET email_verified_at = NOW() WHERE id = ?";
+        $sql = "UPDATE users SET email_verified_at = NOW(), email_verified = 1 WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$tokenData['id']]);
 
@@ -111,7 +99,7 @@ if (!$pdo) {
         $tokenData = verifyEmailToken($pdo, $token);
         if (!$tokenData) {
             $error = 'Ce lien de vérification est invalide ou a expiré.';
-        } elseif ($tokenData['email_verified_at'] !== null) {
+        } elseif ($tokenData['email_verified_at'] !== null || $tokenData['email_verified'] == 1) {
             $success = 'Votre email est déjà vérifié !';
         } else {
             // Procéder à la vérification

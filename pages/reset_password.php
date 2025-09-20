@@ -9,18 +9,6 @@ $error = '';
 $success = '';
 $tokenData = null;
 
-// Fonction pour se connecter à la base de données
-function getConnection($host, $dbname, $username, $password) {
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        return $pdo;
-    } catch (PDOException $e) {
-        error_log("Database connection error: " . $e->getMessage());
-        return null;
-    }
-}
 
 // Fonction pour vérifier le token de réinitialisation
 function verifyPasswordResetToken($pdo, $token) {
