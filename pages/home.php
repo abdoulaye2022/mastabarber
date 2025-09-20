@@ -90,9 +90,9 @@ include '../includes/header.php';
                         <i class="flaticon-scissors" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>High Fade</h3>
-                        <p>A high fade begins higher up on the sides, creating a more pronounced contrast with the
-                           longer hair on top. Perfect for a modern, clean look.</p>
+                        <h3>Fade/Dégradé 3 niveaux</h3>
+                        <p>High, Low, Mid fade sans barbe. Inclus fade + trim + line up.
+                           Service complet de 40 minutes. <strong>CA$30</strong></p>
                     </div>
                 </div>
             </div>
@@ -103,9 +103,9 @@ include '../includes/header.php';
                         <i class="flaticon-shaving-razor" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Mid Fade</h3>
-                        <p>A mid fade haircut is a popular style for men featuring medium length hair toward the top 
-                           and tapered short hair on the sides that fades out at the bottom.</p>
+                        <h3>Fade + Beard + Trim</h3>
+                        <p>Dégradé 3 niveaux avec barbe et line up complet.
+                           Service premium de 40 minutes. <strong>CA$35</strong></p>
                     </div>
                 </div>
             </div>
@@ -116,9 +116,9 @@ include '../includes/header.php';
                         <i class="flaticon-scissors-1" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Low Fade</h3>
-                        <p>A low fade starts close to the ear, just above the ears. The fade line drops down behind the ears and around the 
-                           back of the head. Subtle and professional.</p>
+                        <h3>Taper Fade</h3>
+                        <p>Taper fade (High/Low/Mid) disponible avec ou sans barbe.
+                           30-35 minutes selon l'option. <strong>CA$30-35</strong></p>
                     </div>
                 </div>
             </div>
@@ -129,9 +129,9 @@ include '../includes/header.php';
                         <i class="flaticon-nail-scissors" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>High Taper</h3>
-                        <p>A less subtle style with a larger fade area - it begins tapering near the 
-                           crown or higher up on the side. Highly customizable with different lengths.</p>
+                        <h3>Level 1 + Beard</h3>
+                        <p>Coupe niveau 1 avec barbe incluse.
+                           Service de 30 minutes. <strong>CA$27</strong></p>
                     </div>
                 </div>
             </div>
@@ -142,9 +142,9 @@ include '../includes/header.php';
                         <i class="flaticon-patient" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Mid Taper</h3>
-                        <p>Gradually decreases in hair length from the top of the head to the neckline.
-                           A classic choice for professional and casual looks.</p>
+                        <h3>Hair Color + Cut</h3>
+                        <p>Couleur pour cheveux et coiffure ou line up.
+                           Service de 55 minutes. <strong>Prix variable</strong></p>
                     </div>
                 </div>
             </div>
@@ -155,9 +155,9 @@ include '../includes/header.php';
                         <i class="flaticon-dryer" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Low Taper</h3>
-                        <p>This type of taper cuts the hair length down around the lower edge of your ear.
-                           Perfect for a clean, conservative appearance.</p>
+                        <h3>Infant/Enfant (4-14 ans)</h3>
+                        <p>Coupe spécialement conçue pour les enfants de 4 à 14 ans.
+                           Service de 30 minutes. <strong>CA$25</strong></p>
                     </div>
                 </div>
             </div>
@@ -168,9 +168,9 @@ include '../includes/header.php';
                         <i class="flaticon-scissors-1" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Level 1 Cut</h3>
-                        <p>Number 1 haircut – This guard length is slightly longer than the zero, usually ⅛ of an inch.
-                           Ideal for a very short, neat appearance.</p>
+                        <h3>Basic Express Facial</h3>
+                        <p>Soin du visage express basique, rapide et rafraîchissant.
+                           Service de 20 minutes. <strong>CA$25</strong></p>
                     </div>
                 </div>
             </div>
@@ -181,9 +181,9 @@ include '../includes/header.php';
                         <i class="flaticon-scissors-1" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Zero Level All Shave</h3>
-                        <p>Complete head shave for the ultimate clean look. 
-                           Perfect for those who prefer the bold, minimalist style.</p>
+                        <h3>Mullet or Buzz Cut</h3>
+                        <p>Coupe mullet ou buzz cut selon votre style.
+                           Service de 35 minutes. <strong>CA$30</strong></p>
                     </div>
                 </div>
             </div>
@@ -194,9 +194,9 @@ include '../includes/header.php';
                         <i class="flaticon-scissors-1" aria-hidden="true"></i>
                     </div>
                     <div class="ss-text">
-                        <h3>Beard + Trim</h3>
-                        <p>Any cut to your taste followed by a professional beard trim with straight razor, 
-                           skin toner and relaxing shoulder massage.</p>
+                        <h3>Line Up / Traçage</h3>
+                        <p>Service de line up et traçage de ligne seulement.
+                           Service express de 5 minutes. <strong>CA$17</strong></p>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,16 @@
 <?php
 // Services statiques
 $services = [
-    ['name' => 'Haircut & Styling', 'price' => 25, 'description' => 'Professional haircut and styling'],
-    ['name' => 'Beard Trim', 'price' => 15, 'description' => 'Expert beard trimming and shaping'],
-    ['name' => 'Hot Towel Shave', 'price' => 20, 'description' => 'Traditional hot towel shave experience'],
-    ['name' => 'Hair Wash', 'price' => 10, 'description' => 'Professional hair washing and conditioning']
+    ['name' => 'Fade/Dégradé 3 niveaux (High/Low/Mid) - No Beard', 'price' => 30, 'description' => 'Inclus fade + trim no beard add / Inclus un line up sans barbe - 40 min'],
+    ['name' => 'Fade + Beard + Trim / Dégradé 3 niveaux + Barbe', 'price' => 35, 'description' => 'Dégradé 3 niveaux + barbe et line up - 40 min'],
+    ['name' => 'Taper Fade (High/Low/Mid) - No Beard', 'price' => 30, 'description' => 'Taper fade sans barbe - 30 min'],
+    ['name' => 'Taper Fade + Beard', 'price' => 35, 'description' => 'Taper fade (high/low/mid) avec la barbe - 35 min'],
+    ['name' => 'Level 1 + Beard', 'price' => 27, 'description' => '1 niveau avec la barbe - 30 min'],
+    ['name' => 'Hair Color + Cut or Line Up', 'price' => 'Variable', 'description' => 'Couleur pour cheveux et coiffure - 55 min'],
+    ['name' => 'Infant/Enfant (4 to 14 years)', 'price' => 25, 'description' => 'Coupe pour enfants de 4 à 14 ans - 30 min'],
+    ['name' => 'Basic Express Facial', 'price' => 25, 'description' => 'Soin du visage express basique - 20 min'],
+    ['name' => 'Mullet or Buzz Cut', 'price' => 30, 'description' => 'Coupe mullet ou buzz cut - 35 min'],
+    ['name' => 'Line Up / Traçage de Ligne', 'price' => 17, 'description' => 'Service de line up seulement - 5 min']
 ];
 
 include '../includes/header.php';
@@ -56,10 +62,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Haircut</h3>
+                        <h3>Fade/Dégradé</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Dégradé 3 niveaux (High/Low/Mid) avec ou sans barbe. Inclus fade, trim et line up pour un look moderne et professionnel.</p>
 
                     </div>
 
@@ -78,10 +83,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Shaving</h3>
+                        <h3>Taper Fade</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Service de taper fade (High/Low/Mid) disponible avec ou sans barbe. Technique professionnelle pour un rendu impeccable.</p>
 
                     </div>
 
@@ -101,10 +105,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Beard</h3>
+                        <h3>Level 1 + Beard</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Coupe niveau 1 avec barbe incluse. Service complet de 30 minutes pour un style classique et soigné.</p>
 
                     </div>
 
@@ -124,10 +127,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Trimming</h3>
+                        <h3>Hair Color + Cut</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Service de couleur pour cheveux et coiffure ou line up. Prix variable selon la demande. Service complet de 55 minutes.</p>
 
                     </div>
 
@@ -147,10 +149,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Facial</h3>
+                        <h3>Basic Express Facial</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Soin du visage express basique pour une peau rafraîchie. Traitement rapide et efficace en seulement 20 minutes.</p>
 
                     </div>
 
@@ -170,10 +171,9 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
-                        <h3>Styling</h3>
+                        <h3>Services Spéciaux</h3>
 
-                        <p>Any cut to your taste followed by a shave with straight razor, skin toner and shoulder
-                            massage</p>
+                        <p>Mullet, Buzz Cut, coupes enfants (4-14 ans), et Line Up express. Services adaptés à tous les âges et styles.</p>
 
                     </div>
 
@@ -219,7 +219,7 @@ include '../includes/header.php';
                             <div style="flex: 1; display: flex; justify-content: center; align-items: center">
                                 <div style="border-top: 1px dashed black; width: 90%;"></div>
                             </div>
-                            <span><?php echo '$' . $row['price']; ?></span>
+                            <span><?php echo ($row['price'] === 'Variable') ? $row['price'] : 'CA$' . $row['price']; ?></span>
                         </li>
                         <?php } ?>
                     </ul>
