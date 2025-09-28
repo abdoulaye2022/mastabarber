@@ -3,7 +3,8 @@
 if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '127.0.0.1' || strpos($_SERVER['HTTP_HOST'], 'localhost:') === 0) {
     $publicDir = '/public';
 } else {
-    $publicDir = '/mastabarber/public';
+    // En production, on est déjà dans le dossier public
+    $publicDir = '';
 }
 
 // Récupérer l'URL complète après le nom de domaine
@@ -75,6 +76,12 @@ switch ($pathAfterPublic) {
     case 'verify-email':
     case 'verify_email':
         require_once(__DIR__ . '/../pages/verify_email.php');
+        break;
+    case 'privacy-policy':
+        require_once(__DIR__ . '/../pages/privacy-policy.php');
+        break;
+    case 'privacy-choices':
+        require_once(__DIR__ . '/../pages/privacy-choices.php');
         break;
     case 'not-found':
         require_once(__DIR__ . '/../pages/404.php');
