@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paiement Sécurisé</title>
     <script>
-        // Déterminer l'URL du SDK selon l'environnement
+        // Traductions
+        const translations = {
+            fr: {
+                pageTitle: 'Paiement Sécurisé',
+                payNow: 'Payer Maintenant',
+                processing: 'Traitement du paiement...',
+                success: '✅ Paiement réussi!',
+                error: '❌ Erreur',
+                cardError: 'Erreur lors du traitement de la carte',
+                loading: 'Chargement du formulaire de paiement...',
+                configError: '❌ Configuration Square manquante',
+                sdkLoadError: '❌ Square.js n\'a pas pu se charger',
+                initError: '❌ Erreur d\'initialisation'
+            },
+            en: {
+                pageTitle: 'Secure Payment',
+                payNow: 'Pay Now',
+                processing: 'Processing payment...',
+                success: '✅ Payment successful!',
+                error: '❌ Error',
+                cardError: 'Error processing card',
+                loading: 'Loading payment form...',
+                configError: '❌ Square configuration missing',
+                sdkLoadError: '❌ Failed to load Square.js',
+                initError: '❌ Initialization error'
+            }
+        };
+
+        // Récupérer les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'fr';
+        const t = translations[lang] || translations.fr;
+
+        // Définir la langue du document
+        document.documentElement.lang = lang;
+
+        // Charger le SDK Square
         (function() {
-            const urlParams = new URLSearchParams(window.location.search);
             const appId = urlParams.get('appId') || '';
             const isSandbox = appId.startsWith('sandbox-');
             const sdkUrl = isSandbox
@@ -150,7 +185,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Paiement Sécurisé</h1>
+        <h1 id="page-title"></h1>
         <div class="amount" id="amount-display">$0.00 CAD</div>
 
         <div id="payment-status"></div>
@@ -158,19 +193,20 @@
         <div id="card-container"></div>
 
         <button id="card-button" type="button">
-            Payer Maintenant
+            <span id="button-text"></span>
         </button>
     </div>
 
     <script>
-        // Récupérer les paramètres de l'URL
-        const urlParams = new URLSearchParams(window.location.search);
+        // Appliquer les traductions immédiatement
         const amount = parseFloat(urlParams.get('amount')) || 0;
         const currency = urlParams.get('currency') || 'CAD';
         const applicationId = urlParams.get('appId');
         const locationId = urlParams.get('locationId');
 
-        // Afficher le montant
+        document.title = t.pageTitle;
+        document.getElementById('page-title').textContent = t.pageTitle;
+        document.getElementById('button-text').textContent = t.payNow;
         document.getElementById('amount-display').textContent = `$${amount.toFixed(2)} ${currency}`;
 
         // Variables globales
@@ -219,7 +255,7 @@
 
             const cardButton = document.getElementById('card-button');
             cardButton.disabled = true;
-            showStatus('Traitement du paiement...', 'loading');
+            showStatus(t.processing, 'loading');
 
             try {
                 // Tokeniser la carte
@@ -244,16 +280,16 @@
                         window.PaymentChannel.postMessage(JSON.stringify(paymentData));
                     }
 
-                    showStatus('✅ Paiement réussi!', 'success');
+                    showStatus(t.success, 'success');
 
                 } else {
-                    let errorMessage = 'Erreur lors du traitement de la carte';
+                    let errorMessage = t.cardError;
 
                     if (result.errors && result.errors.length > 0) {
                         errorMessage = result.errors.map(error => error.message).join(', ');
                     }
 
-                    showStatus('❌ ' + errorMessage, 'error');
+                    showStatus(t.error + ' ' + errorMessage, 'error');
                     cardButton.disabled = false;
 
                     // Envoyer l'erreur à Flutter
@@ -271,7 +307,7 @@
                     }
                 }
             } catch (e) {
-                showStatus('❌ Erreur: ' + e.message, 'error');
+                showStatus(t.error + ' ' + e.message, 'error');
                 cardButton.disabled = false;
 
                 // Envoyer l'erreur à Flutter
@@ -293,17 +329,17 @@
         // Initialisation au chargement de la page
         document.addEventListener('DOMContentLoaded', async function () {
             if (!applicationId || !locationId) {
-                showStatus('❌ Configuration Square manquante', 'error');
+                showStatus(t.configError, 'error');
                 return;
             }
 
             try {
                 // Attendre que le SDK Square soit chargé
-                showStatus('Chargement du formulaire de paiement...', 'loading');
+                showStatus(t.loading, 'loading');
                 await window.squareSdkLoaded;
 
                 if (!window.Square) {
-                    showStatus('❌ Square.js n\'a pas pu se charger', 'error');
+                    showStatus(t.sdkLoadError, 'error');
                     return;
                 }
 
@@ -318,7 +354,7 @@
                 // Masquer le message de chargement
                 document.getElementById('payment-status').style.display = 'none';
             } catch (e) {
-                showStatus('❌ Erreur d\'initialisation: ' + e.message, 'error');
+                showStatus(t.initError + ': ' + e.message, 'error');
             }
         });
     </script>
