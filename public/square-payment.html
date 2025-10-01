@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé</title>
+    <script>
+        // Déterminer l'URL du SDK selon l'environnement
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const appId = urlParams.get('appId') || '';
+            const isSandbox = appId.startsWith('sandbox-');
+            const sdkUrl = isSandbox
+                ? 'https://sandbox.web.squarecdn.com/v1/square.js'
+                : 'https://web.squarecdn.com/v1/square.js';
+
+            // Charger le SDK dynamiquement et attendre qu'il soit prêt
+            window.squareSdkLoaded = new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = sdkUrl;
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error('Failed to load Square SDK'));
+                document.head.appendChild(script);
+            });
+        })();
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .amount {
+            font-size: 36px;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 32px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        #card-container {
+            margin-bottom: 24px;
+        }
+
+        #payment-status {
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        #payment-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        #payment-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        #payment-status.loading {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            display: block;
+        }
+
+        #card-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #card-button:hover {
+            background: #d4af37;
+            color: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        #card-button:disabled {
+            background: #e0e0e0;
+            color: #999;
+            border-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #856404;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paiement Sécurisé</h1>
+        <div class="amount" id="amount-display">$0.00 CAD</div>
+
+        <div id="payment-status"></div>
+
+        <div id="card-container"></div>
+
+        <button id="card-button" type="button">
+            Payer Maintenant
+        </button>
+    </div>
+
+    <script>
+        // Récupérer les paramètres de l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = parseFloat(urlParams.get('amount')) || 0;
+        const currency = urlParams.get('currency') || 'CAD';
+        const applicationId = urlParams.get('appId');
+        const locationId = urlParams.get('locationId');
+
+        // Afficher le montant
+        document.getElementById('amount-display').textContent = `$${amount.toFixed(2)} ${currency}`;
+
+        // Variables globales
+        let card;
+        let payments;
+
+        // Fonction pour afficher le statut
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('payment-status');
+            statusDiv.textContent = message;
+            statusDiv.className = type;
+        }
+
+        // Initialiser Square Payments
+        async function initializeCard(payments) {
+            const card = await payments.card();
+            await card.attach('#card-container');
+            return card;
+        }
+
+        // Créer le paiement
+        async function createPayment(token) {
+            const body = JSON.stringify({
+                sourceId: token,
+            });
+
+            const paymentResponse = await fetch('/process-payment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body,
+            });
+
+            if (paymentResponse.ok) {
+                return paymentResponse.json();
+            }
+
+            const errorBody = await paymentResponse.text();
+            throw new Error(errorBody);
+        }
+
+        // Gérer la soumission du paiement
+        async function handlePaymentMethodSubmission(event, card) {
+            event.preventDefault();
+
+            const cardButton = document.getElementById('card-button');
+            cardButton.disabled = true;
+            showStatus('Traitement du paiement...', 'loading');
+
+            try {
+                // Tokeniser la carte
+                const result = await card.tokenize();
+
+                if (result.status === 'OK') {
+                    // Envoyer le token à Flutter via postMessage
+                    const paymentData = {
+                        success: true,
+                        token: result.token,
+                        amount: amount,
+                        currency: currency
+                    };
+
+                    // Pour Flutter WebView
+                    if (window.flutter_inappwebview) {
+                        window.flutter_inappwebview.callHandler('paymentComplete', paymentData);
+                    }
+
+                    // Pour JavaScript channel
+                    if (window.PaymentChannel) {
+                        window.PaymentChannel.postMessage(JSON.stringify(paymentData));
+                    }
+
+                    showStatus('✅ Paiement réussi!', 'success');
+
+                } else {
+                    let errorMessage = 'Erreur lors du traitement de la carte';
+
+                    if (result.errors && result.errors.length > 0) {
+                        errorMessage = result.errors.map(error => error.message).join(', ');
+                    }
+
+                    showStatus('❌ ' + errorMessage, 'error');
+                    cardButton.disabled = false;
+
+                    // Envoyer l'erreur à Flutter
+                    const errorData = {
+                        success: false,
+                        error: errorMessage
+                    };
+
+                    if (window.flutter_inappwebview) {
+                        window.flutter_inappwebview.callHandler('paymentComplete', errorData);
+                    }
+
+                    if (window.PaymentChannel) {
+                        window.PaymentChannel.postMessage(JSON.stringify(errorData));
+                    }
+                }
+            } catch (e) {
+                showStatus('❌ Erreur: ' + e.message, 'error');
+                cardButton.disabled = false;
+
+                // Envoyer l'erreur à Flutter
+                const errorData = {
+                    success: false,
+                    error: e.message
+                };
+
+                if (window.flutter_inappwebview) {
+                    window.flutter_inappwebview.callHandler('paymentComplete', errorData);
+                }
+
+                if (window.PaymentChannel) {
+                    window.PaymentChannel.postMessage(JSON.stringify(errorData));
+                }
+            }
+        }
+
+        // Initialisation au chargement de la page
+        document.addEventListener('DOMContentLoaded', async function () {
+            if (!applicationId || !locationId) {
+                showStatus('❌ Configuration Square manquante', 'error');
+                return;
+            }
+
+            try {
+                // Attendre que le SDK Square soit chargé
+                showStatus('Chargement du formulaire de paiement...', 'loading');
+                await window.squareSdkLoaded;
+
+                if (!window.Square) {
+                    showStatus('❌ Square.js n\'a pas pu se charger', 'error');
+                    return;
+                }
+
+                payments = window.Square.payments(applicationId, locationId);
+                card = await initializeCard(payments);
+
+                const cardButton = document.getElementById('card-button');
+                cardButton.addEventListener('click', async function (event) {
+                    await handlePaymentMethodSubmission(event, card);
+                });
+
+                // Masquer le message de chargement
+                document.getElementById('payment-status').style.display = 'none';
+            } catch (e) {
+                showStatus('❌ Erreur d\'initialisation: ' + e.message, 'error');
+            }
+        });
+    </script>
+</body>
+</html>

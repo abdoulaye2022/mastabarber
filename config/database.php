@@ -29,7 +29,7 @@ function loadEnv($path) {
 }
 
 // Charger le fichier .env
-$envPath = __DIR__ . '/../.env';
+$envPath = __DIR__ . '/../../.env';
 loadEnv($envPath);
 
 // Configuration de la base de données
