@@ -215,6 +215,13 @@ if (isset($_POST['contact'])) {
                                 <li><a href="services" title="Our Barber Services - Haircuts, Beard Trim, Shaving">Services</a></li>
                                 <li><a href="about-us" title="About Masta Barber - Our Story & Team">About Us</a></li>
                                 <li><a href="contact" title="Contact Us - Book Your Appointment">Contact</a></li>
+                                <li>
+                                    <a href="#" id="downloadAppBtn"
+                                       style="background: #c79e56; color: white; padding: 8px 16px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px;"
+                                       title="Download MastaBaber Mobile App">
+                                        <i class="fas fa-mobile-alt"></i> Get App
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -223,3 +230,81 @@ if (isset($_POST['contact'])) {
         </div>
     </header>
     <!-- Header Area End -->
+
+    <!-- Smart App Download Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('downloadAppBtn');
+
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                    // Détection iOS
+                    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        window.location.href = 'https://apps.apple.com/app/mastabarber/id6752813029';
+                    }
+                    // Détection Android
+                    else if (/android/i.test(userAgent)) {
+                        window.location.href = 'https://play.google.com/store/apps/details?id=com.m2atech.mastabarber';
+                    }
+                    // Desktop ou autre - afficher une modal avec les deux options
+                    else {
+                        showAppDownloadModal();
+                    }
+                });
+            }
+        });
+
+        function showAppDownloadModal() {
+            // Créer une modal simple
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 9999;';
+
+            modal.innerHTML = `
+                <div style="background: white; padding: 40px; border-radius: 20px; max-width: 500px; text-align: center;">
+                    <h3 style="color: #333; margin-bottom: 20px; font-size: 1.8em;">Download MastaBaber App</h3>
+                    <p style="color: #666; margin-bottom: 30px;">Choose your platform:</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+                        <a href="https://apps.apple.com/app/mastabarber/id6752813029" target="_blank"
+                           style="display: inline-flex; align-items: center; gap: 12px; background: #000; color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; transition: transform 0.3s ease;"
+                           onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i class="fab fa-apple" style="font-size: 32px;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.8em;">Download on the</div>
+                                <div style="font-size: 1.2em; font-weight: bold;">App Store</div>
+                            </div>
+                        </a>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.m2atech.mastabarber" target="_blank"
+                           style="display: inline-flex; align-items: center; gap: 12px; background: #000; color: white; padding: 15px 25px; border-radius: 12px; text-decoration: none; transition: transform 0.3s ease; position: relative;"
+                           onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i class="fab fa-google-play" style="font-size: 32px; color: #00C853;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.8em;">GET IT ON</div>
+                                <div style="font-size: 1.2em; font-weight: bold;">Google Play</div>
+                            </div>
+                            <span style="position: absolute; top: -8px; right: -8px; background: #ff9800; color: white; font-size: 0.7em; padding: 4px 8px; border-radius: 8px; font-weight: bold;">Soon</span>
+                        </a>
+                    </div>
+
+                    <button onclick="this.parentElement.parentElement.remove()"
+                            style="background: #c79e56; color: white; border: none; padding: 10px 30px; border-radius: 8px; cursor: pointer; font-size: 1em;">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            // Fermer en cliquant sur le fond
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+
+            document.body.appendChild(modal);
+        }
+    </script>

@@ -82,36 +82,49 @@ $services = [
 
                 <div class="col-md-4">
 
-                    <div class="f-gallery">
+                    <div class="f-link">
 
-                        <h4>Gallery</h4>
+                        <h4>Download Our App</h4>
 
-                        <div class="fg-img">
+                        <div class="f-social">
                             <ul>
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/5.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/5.jpeg" alt=""></a></li>
+                                <li>
+                                    <a href="https://apps.apple.com/app/mastabarber/id6752813029" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-apple"></i> App Store
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://play.google.com/store/apps/details?id=com.m2atech.mastabarber" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-google-play"></i> Google Play <span style="font-size: 0.75em; color: #c79e56;">(Soon)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/6.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/6.jpeg" alt=""></a></li>
-
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/7.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/7.jpeg" alt=""></a></li>
-
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/4.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/4.jpeg" alt=""></a></li>
-
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/8.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/8.jpeg" alt=""></a></li>
-
-                                <li><a href="#"
-                                        onclick="showImage(event, '<?php echo BASE_URL; ?>assets/img/coiffures/9.jpeg')"><img
-                                            src="<?php echo BASE_URL; ?>assets/img/coiffures/9.jpeg" alt=""></a></li>
-
+                        <h4 style="margin-top: 20px;">Follow Us</h4>
+                        <div class="f-social">
+                            <ul style="display: flex; gap: 10px; margin-top: 10px;">
+                                <li style="list-style: none;">
+                                    <a target="_blank" href="https://www.facebook.com/masta.barber.2024?mibextid=kFxxJD&rdid=gFvdZECWt8ODqUXG#"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #c79e56; border-radius: 50%; color: white; transition: all 0.3s ease;"
+                                       onmouseover="this.style.background='#a67c52'" onmouseout="this.style.background='#c79e56'">
+                                        <i class="flaticon-facebook"></i>
+                                    </a>
+                                </li>
+                                <li style="list-style: none;">
+                                    <a href="https://www.instagram.com/masta.barber?igsh=MXdrZWpkdjRuNG44Yw%3D%3D&utm_source=qr"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #c79e56; border-radius: 50%; color: white; transition: all 0.3s ease;"
+                                       onmouseover="this.style.background='#a67c52'" onmouseout="this.style.background='#c79e56'">
+                                        <i class="flaticon-instagram"></i>
+                                    </a>
+                                </li>
+                                <li style="list-style: none;">
+                                    <a href="https://snapchat.com/t/0HI9FRsS"
+                                       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #c79e56; border-radius: 50%; color: white; transition: all 0.3s ease;"
+                                       onmouseover="this.style.background='#a67c52'" onmouseout="this.style.background='#c79e56'">
+                                        <i class="fab fa-snapchat"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
 

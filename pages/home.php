@@ -2,6 +2,22 @@
 include '../includes/header.php';
 ?>
 
+<!--App Promo Banner Start-->
+<div class="app-promo-banner" style="background: #333; color: white; padding: 12px 0; text-align: center; position: relative;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mx-auto">
+                <p class="mb-0" style="font-size: 0.95em;">
+                    <i class="flaticon-smartphone" style="margin-right: 8px;"></i>
+                    <strong>NEW!</strong> Download the MastaBaber app for easier bookings 📱
+                    <a href="#mobile-app" style="color: #c79e56; margin-left: 10px; text-decoration: underline;">Learn More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--App Promo Banner End-->
+
 <!--Hero Area Start-->
 <section class="hero-area" id="home" style="background: white !important; background-color: white !important;">
     <div class="container">
@@ -71,6 +87,70 @@ include '../includes/header.php';
     </div>
 </section>
 <!--About Area End-->
+
+<!--Mobile App Section Start-->
+<section class="mobile-app-section" id="mobile-app" style="background: linear-gradient(135deg, #c79e56 0%, #a67c52 100%); padding: 80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2" data-aos="fade-left" data-aos-duration="1500">
+                <div class="app-content text-white">
+                    <h2 class="text-white mb-4">Book Appointments Anytime, Anywhere</h2>
+                    <p class="lead mb-4">Download the MastaBaber mobile app and enjoy:</p>
+                    <ul class="app-features list-unstyled mb-4">
+                        <li class="mb-3">
+                            <i class="flaticon-check-mark" style="color: white; margin-right: 10px;"></i>
+                            <strong>Easy Booking:</strong> Schedule appointments in seconds
+                        </li>
+                        <li class="mb-3">
+                            <i class="flaticon-check-mark" style="color: white; margin-right: 10px;"></i>
+                            <strong>Real-time Updates:</strong> Get instant notifications
+                        </li>
+                        <li class="mb-3">
+                            <i class="flaticon-check-mark" style="color: white; margin-right: 10px;"></i>
+                            <strong>Appointment History:</strong> Track all your visits
+                        </li>
+                        <li class="mb-3">
+                            <i class="flaticon-check-mark" style="color: white; margin-right: 10px;"></i>
+                            <strong>Exclusive Offers:</strong> Get app-only special deals
+                        </li>
+                    </ul>
+
+                    <div class="app-badges" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                        <a href="https://apps.apple.com/app/mastabarber/id6752813029" target="_blank" rel="noopener noreferrer"
+                           style="display: inline-flex; align-items: center; gap: 12px; background: white; color: #333; padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: transform 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+                           onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i class="fab fa-apple" style="font-size: 32px; color: #000;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.75em; color: #666;">Download on the</div>
+                                <div style="font-size: 1.1em; font-weight: bold; color: #000;">App Store</div>
+                            </div>
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.m2atech.mastabarber" target="_blank" rel="noopener noreferrer"
+                           style="display: inline-flex; align-items: center; gap: 12px; background: white; color: #333; padding: 12px 24px; border-radius: 12px; text-decoration: none; transition: transform 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); position: relative;"
+                           onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i class="fab fa-google-play" style="font-size: 32px; color: #00C853;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.75em; color: #666;">GET IT ON</div>
+                                <div style="font-size: 1.1em; font-weight: bold; color: #000;">Google Play</div>
+                            </div>
+                            <span style="position: absolute; top: -8px; right: -8px; background: #ff9800; color: white; font-size: 0.7em; padding: 4px 8px; border-radius: 8px; font-weight: bold;">Soon</span>
+                        </a>
+                    </div>
+                    <p class="mt-3 text-white" style="font-size: 0.9em; opacity: 0.9;">
+                        <i class="flaticon-info"></i> Android version coming soon - currently in testing
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-duration="1500">
+                <div class="app-mockup text-center">
+                    <img src="assets/img/app-mockup.png" alt="MastaBaber Mobile App" class="img-fluid" style="max-width: 400px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Mobile App Section End-->
 
 <!--Service Area Start-->
 <section class="service" id="services">
