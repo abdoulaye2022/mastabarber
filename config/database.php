@@ -29,7 +29,12 @@ function loadEnv($path) {
 }
 
 // Charger le fichier .env
+// Essayer d'abord le chemin local (dev), puis le chemin production
 $envPath = __DIR__ . '/../.env';
+if (!file_exists($envPath)) {
+    // En production, le .env peut être un niveau au-dessus
+    $envPath = __DIR__ . '/../../.env';
+}
 if (file_exists($envPath)) {
     loadEnv($envPath);
 }

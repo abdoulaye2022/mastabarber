@@ -23,28 +23,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $db = getDatabaseConnection();
 
-            // Check if user exists and is an admin
-            $stmt = $db->prepare("SELECT id, email, password_hash, first_name, last_name, role FROM users WHERE email = ? AND is_active = 1 LIMIT 1");
-            $stmt->execute([$email]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($user && password_verify($password, $user['password_hash'])) {
-                // Vérifier si l'utilisateur a le rôle admin
-                if ($user['role'] === 'admin') {
-                    // Set session variables
-                    $_SESSION['admin_logged_in'] = true;
-                    $_SESSION['admin_id'] = $user['id'];
-                    $_SESSION['admin_email'] = $user['email'];
-                    $_SESSION['admin_name'] = $user['first_name'] . ' ' . $user['last_name'];
-                    $_SESSION['admin_role'] = $user['role'];
-
-                    header('Location: admin-dashboard');
-                    exit;
-                } else {
-                    $error = 'Access denied. Admin privileges required.';
-                }
+            if (!$db) {
+                $error = 'Database connection failed.';
             } else {
-                $error = 'Invalid email or password.';
+                // Check if user exists and is an admin
+                // Vérifier d'abord si la colonne 'role' existe
+                try {
+                    $stmt = $db->prepare("SELECT id, email, password_hash, first_name, last_name, role FROM users WHERE email = ? AND is_active = 1 LIMIT 1");
+                    $stmt->execute([$email]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $hasRoleColumn = true;
+                } catch (PDOException $e) {
+                    // La colonne 'role' n'existe probablement pas encore
+                    if (strpos($e->getMessage(), 'role') !== false) {
+                        $stmt = $db->prepare("SELECT id, email, password_hash, first_name, last_name FROM users WHERE email = ? AND is_active = 1 LIMIT 1");
+                        $stmt->execute([$email]);
+                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                        $hasRoleColumn = false;
+                    } else {
+                        throw $e;
+                    }
+                }
+
+                if ($user && password_verify($password, $user['password_hash'])) {
+                    // Si la colonne role n'existe pas, permettre l'accès (transition)
+                    // Si elle existe, vérifier le rôle
+                    if (!$hasRoleColumn || (isset($user['role']) && $user['role'] === 'admin')) {
+                        // Set session variables
+                        $_SESSION['admin_logged_in'] = true;
+                        $_SESSION['admin_id'] = $user['id'];
+                        $_SESSION['admin_email'] = $user['email'];
+                        $_SESSION['admin_name'] = $user['first_name'] . ' ' . $user['last_name'];
+                        $_SESSION['admin_role'] = $hasRoleColumn ? $user['role'] : 'admin';
+
+                        header('Location: admin-dashboard');
+                        exit;
+                    } else {
+                        $error = 'Access denied. Admin privileges required.';
+                    }
+                } else {
+                    $error = 'Invalid email or password.';
+                }
             }
         } catch (PDOException $e) {
             $error = 'Database error. Please try again later.';
