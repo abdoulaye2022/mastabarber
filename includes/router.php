@@ -83,6 +83,15 @@ switch ($pathAfterPublic) {
     case 'privacy-choices':
         require_once(__DIR__ . '/../pages/privacy-choices.php');
         break;
+    case 'admin-login':
+        require_once(__DIR__ . '/../pages/admin-login.php');
+        break;
+    case 'admin-dashboard':
+        require_once(__DIR__ . '/../pages/admin-dashboard.php');
+        break;
+    case 'admin-logout':
+        require_once(__DIR__ . '/../pages/admin-logout.php');
+        break;
     case 'not-found':
         require_once(__DIR__ . '/../pages/404.php');
         break;

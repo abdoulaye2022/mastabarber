@@ -29,8 +29,10 @@ function loadEnv($path) {
 }
 
 // Charger le fichier .env
-$envPath = __DIR__ . '/../../.env';
-loadEnv($envPath);
+$envPath = __DIR__ . '/../.env';
+if (file_exists($envPath)) {
+    loadEnv($envPath);
+}
 
 // Configuration de la base de données
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
