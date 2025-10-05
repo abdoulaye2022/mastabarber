@@ -24,19 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $db = getDatabaseConnection();
 
             // Check if user exists and is an admin
-            $stmt = $db->prepare("SELECT id, email, password_hash, first_name, last_name FROM users WHERE email = ? AND is_active = 1 LIMIT 1");
+            $stmt = $db->prepare("SELECT id, email, password_hash, first_name, last_name, role FROM users WHERE email = ? AND is_active = 1 LIMIT 1");
             $stmt->execute([$email]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($user && password_verify($password, $user['password_hash'])) {
-                // Set session variables
-                $_SESSION['admin_logged_in'] = true;
-                $_SESSION['admin_id'] = $user['id'];
-                $_SESSION['admin_email'] = $user['email'];
-                $_SESSION['admin_name'] = $user['first_name'] . ' ' . $user['last_name'];
+                // Vérifier si l'utilisateur a le rôle admin
+                if ($user['role'] === 'admin') {
+                    // Set session variables
+                    $_SESSION['admin_logged_in'] = true;
+                    $_SESSION['admin_id'] = $user['id'];
+                    $_SESSION['admin_email'] = $user['email'];
+                    $_SESSION['admin_name'] = $user['first_name'] . ' ' . $user['last_name'];
+                    $_SESSION['admin_role'] = $user['role'];
 
-                header('Location: admin-dashboard');
-                exit;
+                    header('Location: admin-dashboard');
+                    exit;
+                } else {
+                    $error = 'Access denied. Admin privileges required.';
+                }
             } else {
                 $error = 'Invalid email or password.';
             }

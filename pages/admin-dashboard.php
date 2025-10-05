@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$_POST['promotion_id']]);
             $success = 'Promotion restored successfully!';
         } elseif ($action === 'permanent_delete') {
-            // Suppression permanente (admin seulement)
+            // Suppression permanente (admin)
             $stmt = $db->prepare("DELETE FROM promotions WHERE id = ?");
             $stmt->execute([$_POST['promotion_id']]);
             $success = 'Promotion permanently deleted!';
@@ -508,7 +508,10 @@ $stats = [
         <div class="header-right">
             <div class="user-info">
                 <i class="fas fa-user-circle" style="font-size: 1.5em;"></i>
-                <span><?php echo htmlspecialchars($_SESSION['admin_name']); ?></span>
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <span><?php echo htmlspecialchars($_SESSION['admin_name']); ?></span>
+                    <span style="font-size: 0.8em; opacity: 0.8;">Admin</span>
+                </div>
             </div>
             <a href="admin-logout" class="btn-logout">
                 <i class="fas fa-sign-out-alt"></i> Logout

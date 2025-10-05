@@ -65,6 +65,44 @@ Le dashboard offre 4 filtres cliquables via les cartes de statistiques :
 - Utilisez un compte de la table `users`
 - L'email et le mot de passe doivent correspondre
 - Le compte doit être actif (`is_active = 1`)
+- **Le compte doit avoir le rôle `admin`**
+
+### Rôles Utilisateurs :
+
+Le système supporte 2 rôles différents :
+
+1. **`user`** (par défaut) : Utilisateur normal de l'application mobile
+   - Accès à l'application mobile uniquement
+   - Peut recevoir des promotions
+   - ❌ Pas d'accès au dashboard admin
+
+2. **`admin`** : Administrateur
+   - ✅ Accès complet au dashboard admin
+   - ✅ Créer, modifier, activer/désactiver des promotions
+   - ✅ Soft delete (suppression récupérable)
+   - ✅ Restaurer des promotions supprimées
+   - ✅ Suppression permanente de promotions
+   - ✅ Tous les droits d'administration
+
+### Configuration des Rôles :
+
+**Exécutez d'abord la migration :**
+```sql
+-- Ajouter la colonne role
+ALTER TABLE users
+ADD COLUMN role ENUM('user', 'admin') NOT NULL DEFAULT 'user' AFTER is_active;
+
+ALTER TABLE users
+ADD INDEX idx_role (role);
+```
+
+**Promouvoir un utilisateur en admin :**
+```sql
+-- Remplacez l'email par celui de l'utilisateur
+UPDATE users SET role = 'admin' WHERE email = 'admin@mastabarber.com';
+```
+
+Le fichier complet est disponible dans : `database_add_user_role.sql`
 
 ## Sécurité
 
