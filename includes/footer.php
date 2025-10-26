@@ -95,7 +95,7 @@ $services = [
                                 </li>
                                 <li>
                                     <a href="https://play.google.com/store/apps/details?id=com.m2atech.mastabarber" target="_blank" rel="noopener noreferrer">
-                                        <i class="fab fa-google-play"></i> Google Play <span style="font-size: 0.75em; color: #c79e56;">(Soon)</span>
+                                        <i class="fab fa-google-play"></i> Google Play
                                     </a>
                                 </li>
                             </ul>

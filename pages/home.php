@@ -133,11 +133,10 @@ include '../includes/header.php';
                                 <div style="font-size: 0.75em; color: #666;">GET IT ON</div>
                                 <div style="font-size: 1.1em; font-weight: bold; color: #000;">Google Play</div>
                             </div>
-                            <span style="position: absolute; top: -8px; right: -8px; background: #ff9800; color: white; font-size: 0.7em; padding: 4px 8px; border-radius: 8px; font-weight: bold;">Soon</span>
                         </a>
                     </div>
                     <p class="mt-3 text-white" style="font-size: 0.9em; opacity: 0.9;">
-                        <i class="flaticon-info"></i> Android version coming soon - currently in testing
+                        <i class="flaticon-info"></i> Available now on iOS and Android
                     </p>
                 </div>
             </div>
