@@ -146,10 +146,16 @@ include '../includes/header.php';
         <p>We never sell your personal data. We may share your information only in the following cases:</p>
         <ul>
             <li><strong>Square (payment processor):</strong> To process payments securely</li>
+            <li><strong>Oomo (communication service):</strong> To manage and respond to customer phone calls and messages</li>
             <li><strong>Service providers:</strong> Trusted partners who help us operate our application (hosting, notifications)</li>
             <li><strong>Legal compliance:</strong> If required by law or to protect our legal rights</li>
             <li><strong>With your consent:</strong> In any other situation with your explicit permission</li>
         </ul>
+
+        <h3>4.1 Mobile Information and SMS Marketing Protection</h3>
+        <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #c79e56; margin-top: 15px;">
+            <p><strong>Important Notice:</strong> No mobile information will be shared with third parties for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+        </div>
     </div>
 
     <div class="privacy-section">
