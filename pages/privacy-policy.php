@@ -233,7 +233,7 @@ include '../includes/header.php';
         <ul>
             <li><strong>Email:</strong> contact@mastabarber.com</li>
             <li><strong>Phone:</strong> +1 (506) 899 8186</li>
-            <li><strong>Address:</strong> 95 Millennium Blvd, Suite 310, Moncton, NB E1E 2G7, Canada</li>
+            <li><strong>Address:</strong> 95 Millennium Blvd, Suite 207, Moncton, NB E1E 2G7, Canada</li>
             <li><strong>Website:</strong> www.mastabarber.com</li>
         </ul>
         <p>We strive to respond to all requests within 30 days.</p>

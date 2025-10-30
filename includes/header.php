@@ -100,7 +100,7 @@ if (isset($_POST['contact'])) {
         "description": "Professional barber shop in Moncton offering expert men's haircuts, beard trimming, and grooming services",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "95 Millennium Blvd, Suite 310",
+            "streetAddress": "95 Millennium Blvd, Suite 207",
             "addressLocality": "Moncton",
             "addressRegion": "NB",
             "postalCode": "E1E 2G7",

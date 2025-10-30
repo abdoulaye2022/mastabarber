@@ -25,7 +25,7 @@ function getSEOData($page = 'home') {
         ],
         'contact' => [
             'title' => 'Contact Masta Barber - Book Appointment | 95 Millennium Blvd, Moncton NB',
-            'description' => 'Contact Masta Barber to book your appointment. Located at 95 Millennium Blvd, Suite 310, Moncton, NB. Call (506) 899-8186 or book online for professional men\'s grooming services.',
+            'description' => 'Contact Masta Barber to book your appointment. Located at 95 Millennium Blvd, Suite 207, Moncton, NB. Call (506) 899-8186 or book online for professional men\'s grooming services.',
             'keywords' => 'contact Masta Barber, book appointment, Moncton barber contact, 95 Millennium Blvd, phone (506) 899-8186, barber appointment booking',
             'og_image' => 'assets/img/logo.png',
             'canonical' => 'contact'

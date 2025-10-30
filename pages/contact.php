@@ -30,7 +30,7 @@ include '../includes/header.php';
                     <div class="single-info">
                         <i class="flaticon-placeholder"></i>
                         <h5>Address</h5>
-                        <p>95 Millennium Blvd, Suite 310<br>Moncton, NB E1E 2G7, Canada</p>
+                        <p>95 Millennium Blvd, Suite 207<br>Moncton, NB E1E 2G7, Canada</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -180,7 +180,7 @@ function initializeGoogleMap() {
         var marker = new google.maps.Marker({
             position: mastaBarberLocation,
             map: mapInstance,
-            title: "Masta Barber - 95 Millennium Blvd, Suite 310, Moncton",
+            title: "Masta Barber - 95 Millennium Blvd, Suite 207, Moncton",
             animation: google.maps.Animation.DROP
         });
 
@@ -191,7 +191,7 @@ function initializeGoogleMap() {
                 '<h4 style="margin: 0 0 10px 0; color: #333;">Masta Barber</h4>' +
                 '<p style="margin: 0 0 10px 0; color: #666;">' +
                 '<strong>Address:</strong><br>' +
-                '95 Millennium Blvd, Suite 310<br>' +
+                '95 Millennium Blvd, Suite 207<br>' +
                 'Moncton, NB E1E 2G7, Canada' +
                 '</p>' +
                 '<p style="margin: 0 0 10px 0; color: #666;">' +
@@ -237,11 +237,11 @@ function showMapError() {
             '<p>We\'re working to resolve this issue.</p>' +
             '<div style="margin: 15px 0; padding: 15px; background: white; border-radius: 4px;">' +
             '<strong>Visit us at:</strong><br>' +
-            '95 Millennium Blvd, Suite 310<br>' +
+            '95 Millennium Blvd, Suite 207<br>' +
             'Moncton, NB E1E 2G7, Canada<br>' +
             '<strong>Phone:</strong> +1 (506) 899 8186' +
             '</div>' +
-            '<a href="https://www.google.com/maps/dir/?api=1&destination=95+Millennium+Blvd,+Suite+310,+Moncton,+NB+E1E+2G7,+Canada" ' +
+            '<a href="https://www.google.com/maps/dir/?api=1&destination=95+Millennium+Blvd,+Suite+207,+Moncton,+NB+E1E+2G7,+Canada" ' +
             'target="_blank" style="background: #007cba; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Get Directions on Google Maps</a>' +
             '</div>';
     }

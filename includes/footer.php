@@ -26,7 +26,7 @@ $services = [
 
                         </div>
 
-                        <p>95 Millennium Blvd, Moncton Suite 310, E1E 2G7</p>
+                        <p>95 Millennium Blvd, Suite 207, Moncton, E1E 2G7</p>
 
                         <p>+1 (506) 899 8186</p>
 
