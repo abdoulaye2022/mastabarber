@@ -189,31 +189,6 @@ if (isset($_POST['contact'])) {
     </button>
     <!-- /Scroll Top -->
 
-    <!-- Closure Notice Banner -->
-    <?php
-    // Afficher la bannière seulement jusqu'au 10 novembre 2025
-    $currentDate = new DateTime();
-    $endDate = new DateTime('2025-11-10 23:59:59');
-
-    if ($currentDate <= $endDate):
-    ?>
-    <div style="background: linear-gradient(135deg, #c79e56 0%, #d4a962 100%); color: white; padding: 15px 0; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; z-index: 1000;">
-        <div class="container">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <i class="fas fa-info-circle" style="font-size: 24px;"></i>
-                <p style="margin: 0; font-size: 1.1em; font-weight: 600;">
-                    <strong>Important Notice:</strong> We will be closed from November 2nd to November 10th, 2025
-                </p>
-                <i class="fas fa-calendar-times" style="font-size: 24px;"></i>
-            </div>
-            <p style="margin: 5px 0 0 0; font-size: 0.95em; opacity: 0.95;">
-                We apologize for any inconvenience. We'll be back to serve you on November 11th!
-            </p>
-        </div>
-    </div>
-    <?php endif; ?>
-    <!-- /Closure Notice Banner -->
-
     <!-- Header Area Start -->
     <header class="header-area" style="background-color: black;">
         <div class="container">
