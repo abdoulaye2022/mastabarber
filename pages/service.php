@@ -1,16 +1,41 @@
 <?php
-// Services statiques
+// Services statiques - Mis à jour le 12 novembre 2025
 $services = [
-    ['name' => 'Fade/Dégradé 3 niveaux (High/Low/Mid) - No Beard', 'price' => 30, 'description' => 'Inclus fade + trim no beard add / Inclus un line up sans barbe - 40 min'],
-    ['name' => 'Fade + Beard + Trim / Dégradé 3 niveaux + Barbe', 'price' => 35, 'description' => 'Dégradé 3 niveaux + barbe et line up - 40 min'],
-    ['name' => 'Taper Fade (High/Low/Mid) - No Beard', 'price' => 30, 'description' => 'Taper fade sans barbe - 30 min'],
-    ['name' => 'Taper Fade + Beard', 'price' => 35, 'description' => 'Taper fade (high/low/mid) avec la barbe - 35 min'],
-    ['name' => 'Level 1 + Beard', 'price' => 27, 'description' => '1 niveau avec la barbe - 30 min'],
-    ['name' => 'Hair Color + Cut or Line Up', 'price' => 'Variable', 'description' => 'Couleur pour cheveux et coiffure - 55 min'],
-    ['name' => 'Infant/Enfant (4 to 14 years)', 'price' => 25, 'description' => 'Coupe pour enfants de 4 à 14 ans - 30 min'],
-    ['name' => 'Basic Express Facial', 'price' => 25, 'description' => 'Soin du visage express basique - 20 min'],
-    ['name' => 'Mullet or Buzz Cut', 'price' => 30, 'description' => 'Coupe mullet ou buzz cut - 35 min'],
-    ['name' => 'Line Up / Traçage de Ligne', 'price' => 17, 'description' => 'Service de line up seulement - 5 min']
+    // Coupes hommes
+    ['name' => 'Fade/Dégradé 3 niveaux (High/Low/Mid) - No Beard', 'price' => 35, 'description' => 'Inclus fade + trim no beard add / Inclus un line up sans barbe - 40 min', 'category' => 'haircut'],
+    ['name' => 'Fade + Beard + Trim / Dégradé 3 niveaux + Barbe', 'price' => 40, 'description' => 'Dégradé 3 niveaux + barbe et line up - 40 min', 'category' => 'haircut'],
+    ['name' => 'Taper Fade (High/Low/Mid) - No Beard', 'price' => 35, 'description' => 'Taper fade sans barbe - 30 min', 'category' => 'haircut'],
+    ['name' => 'Taper Fade + Beard', 'price' => 40, 'description' => 'Taper fade (high/low/mid) avec la barbe - 35 min', 'category' => 'haircut'],
+    ['name' => 'Level 1 + Beard', 'price' => 30, 'description' => '1 niveau avec la barbe - 30 min', 'category' => 'haircut'],
+    ['name' => 'Hair Color + Cut or Line Up', 'price' => 'Variable', 'description' => 'Couleur pour cheveux et coiffure - 55 min', 'category' => 'haircut'],
+    ['name' => 'Infant/Enfant (4 to 14 years)', 'price' => 27, 'description' => 'Coupe pour enfants de 4 à 14 ans - 30 min', 'category' => 'haircut'],
+    ['name' => 'Mullet or Buzz Cut', 'price' => 35, 'description' => 'Coupe mullet ou buzz cut - 35 min', 'category' => 'haircut'],
+    ['name' => 'Zero Level + Hot Towel Blade Trim', 'price' => 45, 'description' => 'Boule à zéro avec serviette chaude - 30 min', 'category' => 'haircut'],
+
+    // Services barbe et finitions
+    ['name' => 'Line Up / Traçage de Ligne', 'price' => 17, 'description' => 'Service de line up seulement - 5 min', 'category' => 'finishing'],
+    ['name' => 'Eyebrows Line Up', 'price' => 5, 'description' => 'Traçage des sourcils - 5 min', 'category' => 'finishing'],
+    ['name' => 'Beard Only / Barbe Seulement', 'price' => 15, 'description' => 'Service barbe uniquement - 30 min', 'category' => 'finishing'],
+
+    // Soins
+    ['name' => 'Basic Express Facial', 'price' => 27, 'description' => 'Soin du visage express basique - 20 min', 'category' => 'care'],
+
+    // Tresses et coiffures protectrices
+    ['name' => 'Knotless Braids / Tresses sans nœuds', 'price' => 100, 'description' => 'Tresses faites avec cheveux naturels à la racine, mèches ajoutées progressivement - 7 hr', 'category' => 'braids'],
+    ['name' => 'Yarn Braid / Tresses de laine', 'price' => 100, 'description' => 'Tresses au fil avec laine acrylique, ajoute longueur et volume - 7 hr', 'category' => 'braids'],
+    ['name' => 'BOHO Braids', 'price' => 100, 'description' => 'Tresses avec mèches bouclées libres, style bohème décontracté - 5 hr', 'category' => 'braids'],
+    ['name' => 'Twist with Extension', 'price' => 100, 'description' => 'Vanilles avec extensions, coiffure protectrice (-10$ sans extension) - 5 hr', 'category' => 'braids'],
+    ['name' => 'Cornrows Boys and Girls', 'price' => 60, 'description' => 'Tresses collées pour garçons et filles - 2 hr', 'category' => 'braids'],
+    ['name' => 'Crochet', 'price' => 100, 'description' => 'Coiffure crochet - 5 hr', 'category' => 'braids'],
+    ['name' => 'Sewin', 'price' => 100, 'description' => 'Tissage cousu - 6 hr', 'category' => 'braids'],
+
+    // Dreads
+    ['name' => 'Dreads Locks from Scratch', 'price' => 400, 'description' => 'Création de dreads (+100$ avec extensions) - 7 hr', 'category' => 'dreads'],
+    ['name' => 'Retwist Dreads', 'price' => 120, 'description' => 'Retwist des dreads - 3 hr 30 min', 'category' => 'dreads'],
+    ['name' => 'Styling Dreads', 'price' => 50, 'description' => 'Coiffage des dreads - 30 min', 'category' => 'dreads'],
+    ['name' => 'Dreads Detox', 'price' => 150, 'description' => 'Détox des dreads - 1 hr', 'category' => 'dreads'],
+    ['name' => 'Dread Washing', 'price' => 80, 'description' => 'Lavage des dreads - 40 min', 'category' => 'dreads'],
+    ['name' => 'Hair Washing', 'price' => 40, 'description' => 'Lavage des cheveux - 30 min', 'category' => 'dreads'],
 ];
 
 include '../includes/header.php';
@@ -171,9 +196,51 @@ include '../includes/header.php';
 
                     <div class="ss-text">
 
+                        <h3>Braids & Tresses</h3>
+
+                        <p>Knotless braids, BOHO braids, Yarn braids, Cornrows, Crochet, Sewin. Coiffures protectrices professionnelles.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="single-service">
+
+                    <div class="ss-icon">
+
+                        <i class="flaticon-scissors-1"></i>
+                    </div>
+
+                    <div class="ss-text">
+
+                        <h3>Dreads Services</h3>
+
+                        <p>Création de dreads, retwist, styling, detox et lavage. Services complets pour l'entretien de vos locks.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="single-service">
+
+                    <div class="ss-icon">
+
+                        <i class="flaticon-shaving-razor"></i>
+                    </div>
+
+                    <div class="ss-text">
+
                         <h3>Services Spéciaux</h3>
 
-                        <p>Mullet, Buzz Cut, coupes enfants (4-14 ans), et Line Up express. Services adaptés à tous les âges et styles.</p>
+                        <p>Mullet, Buzz Cut, Zero Level, coupes enfants (4-14 ans), Line Up et Eyebrows. Services adaptés à tous.</p>
 
                     </div>
 
