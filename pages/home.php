@@ -284,40 +284,6 @@ include '../includes/header.php';
 </section>
 <!--Service Area End-->
 
-<!--Team Section Start-->
-<section class="team" id="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 data-aos="fade-up" data-aos-duration="1500">Licensed Barbers</h2>
-                <p class="text-center mb-5" data-aos="fade-up" data-aos-duration="2000">
-                    Meet our professional team of experienced barbers
-                </p>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-t-member" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="t-img">
-                        <img src="assets/img/coiffures/dm.jpeg" alt="Djibril Mahaman - Professional Barber">
-                    </div>
-                    <div class="st-text">
-                        <h4>Djibril Mahaman</h4>
-                        <p class="text-white mb-3">Master Barber & Founder</p>
-                        <ul>
-                            <li><a href="#" aria-label="Twitter"><i class="flaticon-twitter"></i></a></li>
-                            <li><a href="#" aria-label="Facebook"><i class="flaticon-facebook"></i></a></li>
-                            <li><a href="#" aria-label="Instagram"><i class="flaticon-instagram"></i></a></li>
-                            <li><a href="#" aria-label="LinkedIn"><i class="flaticon-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Team Section End-->
-
 <!--Testimonial Start-->
 <section class="testimonial" id="testimonials">
     <div class="container">
