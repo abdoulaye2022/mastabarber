@@ -284,6 +284,30 @@ include '../includes/header.php';
 </section>
 <!--Service Area End-->
 
+<!--Team Section Start-->
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 data-aos="fade-up" data-aos-duration="1500">Licensed Barbers</h2>
+                <p class="text-center mb-5" data-aos="fade-up" data-aos-duration="2000">
+                    Meet our professional team of experienced barbers
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-t-member" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="t-img">
+                        <img src="assets/img/coiffures/dm.jpeg" alt="Professional Barber">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Team Section End-->
+
 <!--Testimonial Start-->
 <section class="testimonial" id="testimonials">
     <div class="container">
