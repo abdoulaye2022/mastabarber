@@ -49,9 +49,49 @@ include '../includes/header.php';
                     </div>
                 </div>
             </div>
+
+            <!-- Opening Hours -->
+            <div class="col-md-12" style="margin-top: 30px;">
+                <div class="opening-hours-section" style="background: #2a2014; border: 1px solid #c79e56; border-radius: 8px; padding: 30px; text-align: center;">
+                    <h3 style="color: #c79e56; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                        <i class="far fa-clock" style="margin-right: 8px;"></i>Opening Hours
+                    </h3>
+                    <div class="hours-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 800px; margin: 0 auto;">
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Monday</strong>
+                            <span style="color: #e74c3c;">Closed</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Tuesday</strong>
+                            <span style="color: #e74c3c;">Closed</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Wednesday</strong>
+                            <span style="color: #fff;">9:30 AM - 8:30 PM</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Thursday</strong>
+                            <span style="color: #fff;">9:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Friday</strong>
+                            <span style="color: #fff;">9:30 AM - 8:00 PM</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Saturday</strong>
+                            <span style="color: #fff;">9:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="hour-item" style="background: rgba(199, 158, 86, 0.1); border: 1px solid rgba(199, 158, 86, 0.3); border-radius: 6px; padding: 12px 20px; min-width: 150px;">
+                            <strong style="display: block; color: #c79e56;">Sunday</strong>
+                            <span style="color: #fff;">12:00 PM - 7:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    
+
     <div class="contact-details">
         <div class="container">
             <div class="row">
