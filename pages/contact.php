@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/database.php';
 include '../includes/header.php';
 ?>
 
@@ -311,7 +312,7 @@ function loadGoogleMapsScript() {
     }
 
     var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCx3hzJXv9dG54w69-OkTgoP2kJne7xs8M&callback=initMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=<?php echo getenv("GOOGLE_MAPS_API_KEY"); ?>&callback=initMap';
     script.async = true;
     script.defer = true;
     
